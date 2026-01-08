@@ -121,10 +121,13 @@ src/
 ## Описание слоев
 
 ### 1. App (app/)
+
 Инициализация приложения, провайдеры, глобальные стили.
 
 ### 2. Pages (pages/)
+
 Страницы приложения:
+
 - **map/** - Страница с интерактивной картой и домиками
   - Содержит логику отображения карты и домиков
   - Управляет навигацией по карте
@@ -134,7 +137,9 @@ src/
   - Рендерит секции проекта динамически
 
 ### 3. Widgets (widgets/)
+
 Крупные самостоятельные блоки интерфейса:
+
 - **header/** - Шапка сайта
 - **navigation/** - Навигация между страницами
 - **project-card/** - Карточка проекта для отображения в списках
@@ -143,23 +148,29 @@ src/
 - **project-navigation/** - Навигация между проектами (предыдущий/следующий)
 
 ### 4. Entities (entities/)
+
 Бизнес-сущности:
+
 - **project/** - Сущность проекта (уже частично реализована)
   - Содержит типы, данные и базовые хуки для работы с проектами
 
 ### 5. Shared (shared/)
+
 Переиспользуемые ресурсы:
+
 - **lib/** - Утилиты (роутинг, i18n, helpers)
 - **assets/** - Статические ресурсы (изображения, иконки, шрифты)
 
 ## Принципы работы
 
 ### Карта с домиками (pages/map)
+
 1. На карте отображаются домики на основе данных из `entities/project/model/data.ts`
 2. Каждый домик (`HouseMarker`) использует тему из `widgets/project-theme`
 3. При клике на домик происходит переход на страницу проекта через роутер
 
 ### Страница проекта (pages/project)
+
 1. Получает ID проекта из URL параметров
 2. Загружает данные проекта через `entities/project/model`
 3. Применяет тему проекта через `widgets/project-theme` (использует хук `useProjectTheme`)
@@ -172,21 +183,24 @@ src/
    - `form` - Форма обратной связи
 
 ### Темы проектов (widgets/project-theme)
+
 Каждый проект имеет свою тему с:
+
 - Основным цветом
 - Вторичным цветом
 - Фоновым изображением или градиентом
 - Стилями текста
 
 Пример структуры темы:
+
 ```typescript
 type ProjectTheme = {
-  primaryColor: string
-  secondaryColor: string
-  backgroundImage?: string
-  backgroundGradient?: string[]
-  textColor: string
-}
+  primaryColor: string;
+  secondaryColor: string;
+  backgroundImage?: string;
+  backgroundGradient?: string[];
+  textColor: string;
+};
 ```
 
 Конфигурация тем хранится в `widgets/project-theme/model/projectThemes.ts`
@@ -194,6 +208,7 @@ type ProjectTheme = {
 ## Роутинг
 
 Рекомендуемые маршруты:
+
 - `/` - Главная страница (карта с домиками)
 - `/project/:id` - Страница проекта по ID
 - `/about` - О нас (опционально)
@@ -202,12 +217,14 @@ type ProjectTheme = {
 ## Расширение структуры
 
 ### Добавление нового проекта:
+
 1. Добавить данные в `entities/project/model/data.ts`
 2. Добавить тему в `widgets/project-theme/model/projectThemes.ts`
 3. Добавить изображения в `shared/assets/images/projects/`
 4. Добавить переводы в `shared/lib/i18n/translations.ts`
 
 ### Добавление новой секции:
+
 1. Расширить тип `ProjectSectionType` в `entities/project/model/type.ts`
 2. Создать компонент секции в `pages/project/ui/`
 3. Добавить логику отображения в `pages/project/model/useProjectSections.ts`
@@ -219,4 +236,3 @@ type ProjectTheme = {
 3. **Изоляция** - Каждый слой изолирован и имеет четкую ответственность
 4. **Тестируемость** - Легко тестировать отдельные части системы
 5. **Поддерживаемость** - Понятная структура упрощает поддержку кода
-

@@ -10,7 +10,7 @@
     "ts-check": "tsc --noEmit",
     "preview": "vite preview",
     "prepare": "husky",
-    "format": "eslint --fix . && prettier --write ."
+    "format": "eslint --fix ."
   },
   "dependencies": {
     "react": "^19.2.0",

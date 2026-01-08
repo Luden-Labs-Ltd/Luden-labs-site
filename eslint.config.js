@@ -22,7 +22,16 @@ export default defineConfig([
       tailwindcss,
     },
     rules: {
-      'prettier/prettier': 'error',
+      'prettier/prettier': [
+        'error',
+        {
+          semi: false,
+          singleQuote: true,
+          tabWidth: 2,
+          trailingComma: 'es5',
+          printWidth: 100,
+        },
+      ],
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/enforces-negative-arbitrary-values': 'warn',
       'tailwindcss/enforces-shorthand': 'warn',

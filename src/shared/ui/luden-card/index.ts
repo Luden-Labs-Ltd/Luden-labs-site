@@ -1,0 +1,1 @@
+export { LudenCard } from './LudenCard';

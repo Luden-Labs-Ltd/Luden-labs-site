@@ -1,4 +1,4 @@
-export type ThemeColor = 'ludic' | 'energy' | 'space' | 'retention';
+export type ThemeColor = "ludic" | "energy" | "space" | "retention";
 
 export interface IslandPoint {
   id: string;
@@ -25,4 +25,3 @@ export interface CardData {
   image?: string;
   theme?: ThemeColor;
 }
-

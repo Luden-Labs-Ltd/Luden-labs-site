@@ -47,10 +47,10 @@
   --color-retention-900: #581c87;
 
   /* Fonts */
-  --font-family-sans: 'Inter', system-ui, sans-serif;
-  --font-family-display: 'Poppins', sans-serif;
-  --font-family-days-one: 'Days One', sans-serif;
-  --font-family-montserrat: 'Montserrat', sans-serif;
+  --font-family-sans: "Inter", system-ui, sans-serif;
+  --font-family-display: "Poppins", sans-serif;
+  --font-family-days-one: "Days One", sans-serif;
+  --font-family-montserrat: "Montserrat", sans-serif;
 
   /* Animations */
   --animate-float: float 6s ease-in-out infinite;
@@ -58,8 +58,13 @@
   --animate-spin-slow: spin 8s linear infinite;
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
 }
 
@@ -67,7 +72,12 @@ body {
   font-family: var(--font-family-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-family-display);
 }
 
@@ -75,13 +85,13 @@ h1, h2, h3, h4, h5, h6 {
 .project-content-border {
   position: relative;
   border-top: none;
-  border-bottom: 3px solid #5E6061;
+  border-bottom: 3px solid #5e6061;
   border-radius: 30px;
   overflow: hidden;
 }
 
 .project-content-border::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -94,13 +104,13 @@ h1, h2, h3, h4, h5, h6 {
     rgba(94, 96, 97, 0.5) 40%,
     rgba(94, 96, 97, 0.7) 60%,
     rgba(94, 96, 97, 0.85) 80%,
-    #5E6061 100%
+    #5e6061 100%
   );
   pointer-events: none;
 }
 
 .project-content-border::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
@@ -113,20 +123,20 @@ h1, h2, h3, h4, h5, h6 {
     rgba(94, 96, 97, 0.5) 40%,
     rgba(94, 96, 97, 0.7) 60%,
     rgba(94, 96, 97, 0.85) 80%,
-    #5E6061 100%
+    #5e6061 100%
   );
   pointer-events: none;
 }
 
 /* Project Content Text - стили текста контента */
 .project-content-text {
-  font-family: 'Days One', sans-serif;
+  font-family: "Days One", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 30px;
   line-height: 100%;
   letter-spacing: 0%;
-  color: #5E6061;
+  color: #5e6061;
   text-align: left;
 }
 
@@ -151,7 +161,7 @@ h1, h2, h3, h4, h5, h6 {
   .project-header-title {
     font-size: 45px;
   }
-  
+
   .project-header-banner {
     height: 106px;
     min-height: 106px;
@@ -163,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
   .project-header-title {
     font-size: clamp(45px, 10vw, 75px);
   }
-  
+
   .project-header-banner {
     height: clamp(106px, 16vh, 125px);
     min-height: clamp(106px, 16vh, 125px);
@@ -175,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
   .project-header-title {
     font-size: clamp(75px, 9.5vw, 100px);
   }
-  
+
   .project-header-banner {
     height: clamp(125px, 15vh, 155px);
     min-height: clamp(125px, 15vh, 155px);
@@ -187,7 +197,7 @@ h1, h2, h3, h4, h5, h6 {
   .project-header-title {
     font-size: clamp(100px, 9vw, 135px);
   }
-  
+
   .project-header-banner {
     height: clamp(155px, 15vh, 200px);
     min-height: clamp(155px, 15vh, 200px);
@@ -199,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
   .project-header-title {
     font-size: clamp(135px, 10vw, 196px);
   }
-  
+
   .project-header-banner {
     height: clamp(200px, 15.6vh, 300px);
     min-height: clamp(200px, 15.6vh, 300px);
@@ -211,7 +221,7 @@ h1, h2, h3, h4, h5, h6 {
   .project-header-title {
     font-size: clamp(196px, 8vw, 240px);
   }
-  
+
   .project-header-banner {
     height: clamp(300px, 12vh, 360px);
     min-height: clamp(300px, 12vh, 360px);
@@ -223,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   .project-header-title {
     font-size: clamp(240px, 7vw, 280px);
   }
-  
+
   .project-header-banner {
     height: clamp(360px, 11vh, 420px);
     min-height: clamp(360px, 11vh, 420px);
@@ -237,10 +247,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Заголовок ОПИСАНИЕ */
 .project-description-title {
-  font-family: 'Days One', sans-serif;
+  font-family: "Days One", sans-serif;
   font-weight: 400;
   font-size: clamp(32px, 3.9vw, 75px);
-  color: #5E6061;
+  color: #5e6061;
   letter-spacing: 0%;
   line-height: 1.273em;
 }
@@ -252,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-description-banner-text {
-  font-family: 'Days One', sans-serif;
+  font-family: "Days One", sans-serif;
   font-weight: 400;
   font-size: clamp(16px, 1.67vw, 32px);
   line-height: 1.273em;
@@ -268,7 +278,11 @@ h1, h2, h3, h4, h5, h6 {
   background: white;
   border-radius: clamp(10px, 0.78vw, 15px);
   padding: clamp(2px, 0.16vw, 3px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 203, 30, 1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 203, 30, 1) 100%
+  );
 }
 
 .project-feature-card-inner {
@@ -283,11 +297,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-feature-number {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: clamp(80px, 10.42vw, 200px);
   line-height: 1.219em;
-  color: #8C8C8C;
+  color: #8c8c8c;
   user-select: none;
   pointer-events: none;
 }
@@ -300,25 +314,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-feature-title {
-  font-family: 'Days One', sans-serif;
+  font-family: "Days One", sans-serif;
   font-weight: 400;
   font-size: clamp(18px, 1.88vw, 36px);
   line-height: 1.273em;
   letter-spacing: 0%;
-  color: #5E6061;
+  color: #5e6061;
 }
 
 .project-feature-description {
-  font-family: 'Days One', sans-serif;
+  font-family: "Days One", sans-serif;
   font-weight: 400;
   font-size: clamp(14px, 1.35vw, 26px);
   line-height: 1.273em;
-  color: #5E6061;
+  color: #5e6061;
 }
 
 /* Адаптивные отступы */
 .project-description-banner-padding {
-  padding: clamp(32px, 3.28vw, 63px) clamp(20px, 9.17vw, 176px) clamp(140px, 15.1vw, 290px);
+  padding: clamp(32px, 3.28vw, 63px) clamp(20px, 9.17vw, 176px)
+    clamp(140px, 15.1vw, 290px);
 }
 
 .project-description-cards-wrapper {
@@ -339,36 +354,36 @@ h1, h2, h3, h4, h5, h6 {
   .project-description-title {
     font-size: 24px;
   }
-  
+
   .project-description-banner-text {
     font-size: 14px;
   }
-  
+
   .project-feature-number {
     font-size: 90px;
   }
-  
+
   .project-feature-title {
     font-size: 18px;
   }
-  
+
   .project-feature-description {
     font-size: 16px;
   }
-  
+
   .project-feature-card-inner {
     min-height: 214px;
   }
-  
+
   .project-feature-number-wrapper {
     left: 10px;
     top: -5px;
   }
-  
+
   .project-description-cards-wrapper {
     margin-top: 0;
   }
-  
+
   .project-description-banner-padding {
     padding: 32px 20px 32px;
   }
@@ -379,32 +394,32 @@ h1, h2, h3, h4, h5, h6 {
   .project-description-title {
     font-size: clamp(24px, 4.7vw, 36px);
   }
-  
+
   .project-description-banner-text {
     font-size: clamp(14px, 2.34vw, 18px);
   }
-  
+
   .project-feature-number {
     font-size: clamp(90px, 9.77vw, 75px);
   }
-  
+
   .project-feature-title {
     font-size: clamp(18px, 1.82vw, 14px);
   }
-  
+
   .project-feature-description {
     font-size: clamp(16px, 1.56vw, 12px);
   }
-  
+
   .project-feature-card-inner {
     min-height: clamp(214px, 24.87vw, 191px);
   }
-  
+
   .project-feature-number-wrapper {
     left: -10px;
     top: -10px;
   }
-  
+
   .project-description-cards-wrapper {
     margin-top: -100px;
   }
@@ -415,32 +430,32 @@ h1, h2, h3, h4, h5, h6 {
   .project-description-title {
     font-size: clamp(36px, 5.21vw, 54px);
   }
-  
+
   .project-description-banner-text {
     font-size: clamp(18px, 2.32vw, 24px);
   }
-  
+
   .project-feature-number {
     font-size: clamp(75px, 9.65vw, 100px);
   }
-  
+
   .project-feature-title {
     font-size: clamp(14px, 1.74vw, 18px);
   }
-  
+
   .project-feature-description {
     font-size: clamp(12px, 1.35vw, 14px);
   }
-  
+
   .project-feature-card-inner {
     min-height: clamp(191px, 16.7vw, 173px);
   }
-  
+
   .project-feature-number-wrapper {
     left: -12px;
     top: -25px;
   }
-  
+
   .project-description-cards-wrapper {
     margin-top: -120px;
   }
@@ -451,32 +466,32 @@ h1, h2, h3, h4, h5, h6 {
   .project-description-title {
     font-size: clamp(54px, 4.39vw, 60px);
   }
-  
+
   .project-description-banner-text {
     font-size: 24px;
   }
-  
+
   .project-feature-number {
     font-size: clamp(100px, 11.7vw, 160px);
   }
-  
+
   .project-feature-title {
     font-size: clamp(18px, 1.75vw, 24px);
   }
-  
+
   .project-feature-description {
     font-size: 16px;
   }
-  
+
   .project-feature-card-inner {
     min-height: clamp(173px, 19.82vw, 271px);
   }
-  
+
   .project-feature-number-wrapper {
     left: -15px;
     top: -35px;
   }
-  
+
   .project-description-cards-wrapper {
     margin-top: -150px;
   }
@@ -487,32 +502,32 @@ h1, h2, h3, h4, h5, h6 {
   .project-description-title {
     font-size: clamp(60px, 3.91vw, 75px);
   }
-  
+
   .project-description-banner-text {
     font-size: clamp(24px, 1.67vw, 32px);
   }
-  
+
   .project-feature-number {
     font-size: clamp(160px, 10.42vw, 200px);
   }
-  
+
   .project-feature-title {
     font-size: clamp(24px, 1.88vw, 36px);
   }
-  
+
   .project-feature-description {
     font-size: clamp(16px, 1.35vw, 26px);
   }
-  
+
   .project-feature-card-inner {
     min-height: clamp(271px, 19.84vw, 381px);
   }
-  
+
   .project-feature-number-wrapper {
     left: -20px;
     top: -45px;
   }
-  
+
   .project-description-cards-wrapper {
     margin-top: -190px;
   }
@@ -523,23 +538,23 @@ h1, h2, h3, h4, h5, h6 {
   .project-description-title {
     font-size: clamp(75px, 3.13vw, 80px);
   }
-  
+
   .project-description-banner-text {
     font-size: clamp(32px, 1.41vw, 36px);
   }
-  
+
   .project-feature-number {
     font-size: clamp(200px, 8.59vw, 220px);
   }
-  
+
   .project-feature-title {
     font-size: clamp(36px, 1.56vw, 40px);
   }
-  
+
   .project-feature-description {
     font-size: clamp(26px, 1.09vw, 28px);
   }
-  
+
   .project-feature-card-inner {
     min-height: clamp(381px, 16.41vw, 420px);
   }
@@ -550,23 +565,23 @@ h1, h2, h3, h4, h5, h6 {
   .project-description-title {
     font-size: 80px;
   }
-  
+
   .project-description-banner-text {
     font-size: 36px;
   }
-  
+
   .project-feature-number {
     font-size: 220px;
   }
-  
+
   .project-feature-title {
     font-size: 40px;
   }
-  
+
   .project-feature-description {
     font-size: 28px;
   }
-  
+
   .project-feature-card-inner {
     min-height: 420px;
   }

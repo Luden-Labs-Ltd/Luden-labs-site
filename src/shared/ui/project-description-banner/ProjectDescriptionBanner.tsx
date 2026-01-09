@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import clsx from 'clsx';
-import type { ProcessedImageMetadata } from 'vite-imagetools';
+import { motion } from "framer-motion";
+import clsx from "clsx";
+import type { ProcessedImageMetadata } from "vite-imagetools";
 
 interface ProjectDescriptionBannerProps {
   text: string;
@@ -15,9 +15,9 @@ export function ProjectDescriptionBanner({
 }: ProjectDescriptionBannerProps) {
   const backgroundStyle = backgroundImage
     ? {
-        backgroundImage: `url(${typeof backgroundImage === 'string' ? backgroundImage : backgroundImage.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundImage: `url(${typeof backgroundImage === "string" ? backgroundImage : backgroundImage.src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }
     : {};
 
@@ -27,19 +27,16 @@ export function ProjectDescriptionBanner({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
       className={clsx(
-        'w-full project-description-banner',
-        !backgroundImage && 'bg-gradient-to-r from-yellow-300 to-yellow-500',
-        'relative overflow-hidden',
-        className
+        "project-description-banner w-full",
+        !backgroundImage && "bg-gradient-to-r from-yellow-300 to-yellow-500",
+        "relative overflow-hidden",
+        className,
       )}
       style={backgroundStyle}
     >
-      <div className="relative z-10 max-w-[1920px] mx-auto px-4 md:px-8 lg:px-12 py-6 md:py-8 lg:py-10">
-        <p className="project-description-banner-text text-center">
-          {text}
-        </p>
+      <div className='relative z-10 mx-auto max-w-[1920px] px-4 py-6 md:px-8 md:py-8 lg:px-12 lg:py-10'>
+        <p className='project-description-banner-text text-center'>{text}</p>
       </div>
     </motion.div>
   );
 }
-

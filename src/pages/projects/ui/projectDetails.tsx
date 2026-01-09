@@ -2,6 +2,8 @@ import { ProjectHeader } from "./ProjectHeader";
 import { ProjectContentSection } from "./ProjectContentSection";
 import { ProjectDescriptionSection } from "./ProjectDescriptionSection";
 import { ProjectNotFound } from "./ProjectNotFound";
+import { ProjectFooter } from "./ProjectFooter";
+import { ProjectFAQSection } from "./ProjectFAQSection";
 import { Navbar } from "@/shared/ui/navbar";
 import { useProjectDetail } from "../model";
 import headerBg from "@/shared/assets/images/projects/yellow-orange-gradient.png?format=webp";
@@ -36,6 +38,17 @@ export function ProjectDetail() {
         bannerText={project.descriptionBannerText}
         features={project.features}
       />
+
+      {/* Секция FAQ */}
+      {project.faq && project.faq.length > 0 && (
+        <ProjectFAQSection
+          items={project.faq}
+          bannerBackgroundImage={headerBg}
+        />
+      )}
+
+      {/* Футер */}
+      <ProjectFooter backgroundColor={project.footerBackgroundColor} />
     </div>
   );
 }

@@ -586,3 +586,1453 @@ h6 {
     min-height: 420px;
   }
 }
+
+/* Project Footer - стили для футера проектов */
+.project-footer {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.project-footer-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 5.36vw, 103px);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Два основных блока футера */
+.project-footer-main-blocks {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(60px, 8.33vw, 160px);
+  padding: clamp(40px, 5.36vw, 103px) 0 clamp(40px, 3.65vw, 70px);
+  align-items: flex-start;
+}
+
+/* Левый блок - LUDEN LABS + контакты */
+.project-footer-left-block {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.08vw, 40px);
+  flex-shrink: 0;
+}
+
+/* Правый блок - Форма + Навигация */
+.project-footer-right-block {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 4.17vw, 60px);
+  flex: 1;
+}
+
+/* Брендовая колонка */
+.project-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.08vw, 40px);
+}
+
+.project-footer-brand-title {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: clamp(24px, 1.875vw, 36px);
+  line-height: 1.273em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+}
+
+.project-footer-brand-description {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 1.09vw, 21px);
+  line-height: 1.21em;
+  color: #000000;
+  margin: 0;
+  max-width: 400px;
+}
+
+/* Иконки социальных сетей */
+.project-footer-social-icons {
+  display: flex;
+  gap: clamp(12px, 1.04vw, 20px);
+}
+
+.project-footer-social-icon {
+  width: clamp(40px, 3.13vw, 60px);
+  height: clamp(40px, 3.13vw, 60px);
+  border: 1px solid #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #000000;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 1.25vw, 24px);
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.project-footer-social-icon:hover {
+  background-color: #000000;
+  color: white;
+}
+
+/* Контакты - соцсети и email */
+.project-footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.08vw, 35px);
+  margin-top: clamp(20px, 2.08vw, 40px);
+}
+
+.project-footer-email {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 1.09vw, 21px);
+  line-height: 1.21em;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.project-footer-email:hover {
+  color: #444444;
+}
+
+/* Средняя часть футера - Навигация - всегда две колонки рядом */
+.project-footer-middle-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: clamp(60px, 3.13vw, 100px);
+  width: 100%;
+}
+
+/* Колонки навигации - всегда рядом друг с другом */
+.project-footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.project-footer-column-title {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 1.46vw, 28px);
+  line-height: 1.273em;
+  color: #000000;
+  margin: 0 0 clamp(20px, 2.35vw, 45.21px) 0;
+}
+
+.project-footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.project-footer-link {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 1.09vw, 21px);
+  line-height: 1.21em;
+  color: #444444;
+  text-decoration: none;
+  transition: color 0.2s;
+  margin-bottom: clamp(10px, 0.83vw, 16px);
+}
+
+.project-footer-link:hover {
+  color: #000000;
+}
+
+/* Форма обратной связи */
+.project-footer-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 1.51vw, 29px);
+  width: 100%;
+  max-width: 994.32px;
+}
+
+.project-footer-form-title {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: clamp(28px, 2.19vw, 42px);
+  line-height: 1.273em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 0 clamp(20px, 1.51vw, 29px) 0;
+}
+
+.project-footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 1.25vw, 24px);
+}
+
+.project-footer-form-row {
+  width: 100%;
+}
+
+.project-footer-input,
+.project-footer-textarea {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.09vw, 21px);
+  line-height: 1.2102272396995908em;
+  color: #4d4d4d;
+  padding: clamp(10px, 0.73vw, 14px) clamp(20px, 2.08vw, 40px);
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.project-footer-input::placeholder,
+.project-footer-textarea::placeholder {
+  color: #4d4d4d;
+}
+
+.project-footer-input:focus,
+.project-footer-textarea:focus {
+  border-color: #444444;
+}
+
+.project-footer-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.project-footer-form-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(20px, 7.76vw, 149px);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.project-footer-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  width: auto;
+  max-width: 481px;
+  flex: 1;
+  min-width: 200px;
+  line-height: 1.3em;
+}
+
+.project-footer-checkbox {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 1px solid #a1a1aa;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+.project-footer-checkbox:checked {
+  background: #000000;
+  border-color: #000000;
+}
+
+.project-footer-checkbox-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 0.94vw, 18px);
+  line-height: 1.3em;
+  color: #000000;
+}
+
+.project-footer-checkbox-text u {
+  text-decoration: underline;
+}
+
+.project-footer-submit-btn {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.09vw, 21px);
+  line-height: 1.21em;
+  color: #000000;
+  padding: clamp(10px, 0.73vw, 14px) clamp(20px, 2.08vw, 40px);
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.project-footer-submit-btn:hover {
+  background: #000000;
+  color: white;
+}
+
+/* Разделительная линия - на всю ширину экрана */
+.project-footer-divider {
+  width: 100vw;
+  height: 1px;
+  background: #4d4d4d;
+  margin: clamp(30px, 2.5vw, 48px) calc(-50vw + 50%);
+  position: relative;
+}
+
+/* Нижняя часть футера */
+.project-footer-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: clamp(40px, 8.33vw, 160px);
+  padding: 0 0 clamp(30px, 2.5vw, 48px) 0;
+}
+
+.project-footer-bottom-links {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 0.52vw, 10px);
+}
+
+.project-footer-bottom-link {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 0.83vw, 16px);
+  line-height: 1.21em;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.project-footer-bottom-link:hover {
+  color: #444444;
+}
+
+.project-footer-copyright {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 0.83vw, 16px);
+  line-height: 1.21em;
+  color: #000000;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Мобильная версия (до 480px) */
+@media (max-width: 480px) {
+  .project-footer-container {
+    padding: 0 16px;
+  }
+
+  .project-footer-main-blocks {
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
+  }
+
+  .project-footer-left-block {
+    width: 100%;
+  }
+
+  .project-footer-right-block {
+    width: 100%;
+  }
+
+  .project-footer-contacts {
+    position: static;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  .project-footer-middle-section {
+    position: static;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(15px, 3.91vw, 20px);
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  .project-footer-column {
+    width: auto;
+    flex-shrink: 0;
+    margin-left: 0 !important;
+  }
+
+  .project-footer-divider {
+    width: 100vw;
+    margin: 40px calc(-50vw + 50%);
+  }
+
+  .project-footer-bottom {
+    position: static;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 0 20px 0;
+    transform: none;
+  }
+
+  .project-footer-bottom-links {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-footer-copyright {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Планшеты (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .project-footer-container {
+    padding: 0 clamp(20px, 4vw, 40px);
+  }
+
+  .project-footer-main-blocks {
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 60px;
+  }
+
+  .project-footer-left-block {
+    width: 100%;
+  }
+
+  .project-footer-right-block {
+    width: 100%;
+  }
+
+  .project-footer-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-footer-form-actions {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .project-footer-checkbox-label {
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .project-footer-submit-btn {
+    width: 100%;
+  }
+
+  .project-footer-contacts {
+    position: static;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .project-footer-middle-section {
+    position: static;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(40px, 8.33vw, 60px);
+    margin-top: 0;
+  }
+
+  .project-footer-column {
+    width: auto;
+    flex-shrink: 0;
+    margin-left: 0 !important;
+  }
+
+  .project-footer-divider {
+    width: 100vw;
+    margin: 50px calc(-50vw + 50%);
+  }
+
+  .project-footer-bottom {
+    position: static;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 0 30px 0;
+    transform: none;
+  }
+
+  .project-footer-bottom-links {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-footer-copyright {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Средние планшеты (769px - 1036px) */
+@media (min-width: 769px) and (max-width: 1036px) {
+  .project-footer-container {
+    padding: 0 clamp(40px, 5vw, 60px);
+  }
+
+  .project-footer-main-blocks {
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 80px;
+  }
+
+  .project-footer-left-block {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .project-footer-right-block {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .project-footer-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-footer-form-actions {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .project-footer-checkbox-label {
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .project-footer-submit-btn {
+    width: 100%;
+  }
+
+  .project-footer-contacts {
+    position: static;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .project-footer-middle-section {
+    position: static;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(60px, 10.42vw, 100px);
+    margin-top: 0;
+  }
+
+  .project-footer-column {
+    width: auto;
+    flex-shrink: 0;
+    margin-left: 0 !important;
+  }
+
+  .project-footer-divider {
+    width: 100vw;
+    margin: 60px calc(-50vw + 50%);
+  }
+
+  .project-footer-bottom {
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 0 40px 0;
+    transform: none;
+  }
+
+  .project-footer-bottom-links {
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-footer-copyright {
+    width: auto;
+    text-align: right;
+  }
+}
+
+/* Большие планшеты/маленькие десктопы (1037px - 1366px) */
+@media (min-width: 1037px) and (max-width: 1366px) {
+  .project-footer-container {
+    padding: 0 clamp(60px, 6vw, 80px);
+  }
+
+  .project-footer-main-blocks {
+    gap: 80px;
+    padding-top: 80px;
+  }
+
+  .project-footer-left-block {
+    width: 400px;
+  }
+
+  .project-footer-right-block {
+    width: 100%;
+    max-width: 600px;
+    flex: 1;
+  }
+
+  .project-footer-contacts {
+    position: static;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .project-footer-middle-section {
+    position: static;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(80px, 8.33vw, 100px);
+    margin-top: 0;
+  }
+
+  .project-footer-column {
+    width: auto;
+    flex-shrink: 0;
+    margin-left: 0 !important;
+  }
+
+  .project-footer-divider {
+    width: 100vw;
+    margin: 60px calc(-50vw + 50%);
+  }
+
+  .project-footer-bottom {
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 0 48px 0;
+    transform: none;
+  }
+
+  .project-footer-bottom-links {
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-footer-copyright {
+    width: auto;
+    text-align: right;
+  }
+}
+
+/* Десктопы (1367px - 1920px) - точное позиционирование по Figma */
+@media (min-width: 1367px) and (max-width: 1920px) {
+  .project-footer-container {
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+    min-height: 1168px;
+    padding: 0 clamp(102.68px, 5.35vw, 103px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* Два основных блока */
+  .project-footer-main-blocks {
+    padding-top: 102.77px;
+    gap: clamp(80px, 8.33vw, 160px);
+  }
+
+  .project-footer-left-block {
+    width: clamp(300px, 21.55vw, 413.71px);
+    flex-shrink: 0;
+  }
+
+  .project-footer-right-block {
+    flex: 1;
+    max-width: 994.32px;
+  }
+
+  .project-footer-brand {
+    width: clamp(300px, 21.55vw, 413.71px);
+    margin-left: 0;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .project-footer-brand-title {
+    font-size: 36px;
+    line-height: 1.27294921875em;
+    color: #4d4d4d;
+  }
+
+  .project-footer-brand-description {
+    font-size: 21px;
+    line-height: 1.2102272396995908em;
+    color: #4d4d4d;
+    max-width: 413.71px;
+  }
+
+  .project-footer-form-wrapper {
+    width: clamp(400px, 51.79vw, 994.32px);
+    margin-right: 0;
+    gap: 29px;
+    flex: 1;
+    max-width: 994.32px;
+  }
+
+  .project-footer-form-title {
+    font-size: 42px;
+    line-height: 1.27294921875em;
+    color: #4d4d4d;
+    height: 60px;
+    margin: 0;
+  }
+
+  .project-footer-form {
+    gap: 24px;
+  }
+
+  .project-footer-input,
+  .project-footer-textarea {
+    font-size: 21px;
+    line-height: 1.2102272396995908em;
+    color: #4d4d4d;
+    border-color: #4d4d4d;
+  }
+
+  .project-footer-form-actions {
+    gap: 149px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .project-footer-checkbox-label {
+    width: auto;
+    max-width: 481px;
+    min-width: 200px;
+  }
+
+  .project-footer-checkbox-text {
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 1.2999999788072374em;
+    color: #2b2c2c;
+  }
+
+  .project-footer-submit-btn {
+    width: 368px;
+    height: 61px;
+    font-size: 21px;
+    line-height: 1.2102272396995908em;
+    color: #4d4d4d;
+    border-color: #4d4d4d;
+  }
+
+  /* Контакты - часть левого блока */
+  .project-footer-contacts {
+    position: static;
+    width: auto;
+    gap: 35px;
+    margin-top: 0;
+  }
+
+  .project-footer-social-icons {
+    width: 161px;
+    gap: 20px;
+  }
+
+  .project-footer-social-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #4d4d4d;
+    font-size: 16px;
+    color: #4d4d4d;
+  }
+
+  .project-footer-email {
+    font-family: "Days One", sans-serif;
+    font-size: 21px;
+    line-height: 1.27294921875em;
+    color: #8e8e93;
+    width: auto;
+    margin-top: 0;
+  }
+
+  /* Средняя секция - навигация - часть правого блока */
+  .project-footer-middle-section {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 100px;
+    margin-top: 0;
+  }
+
+  .project-footer-column {
+    gap: 0;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .project-footer-column:first-child {
+    width: 272.15px;
+  }
+
+  .project-footer-column:last-child {
+    width: 282.53px;
+    margin-left: 0;
+  }
+
+  .project-footer-column-title {
+    font-size: clamp(20px, 1.46vw, 28px);
+    line-height: 1.27294921875em;
+    color: #4d4d4d;
+    margin-bottom: clamp(20px, 2.35vw, 45.21px);
+  }
+
+  .project-footer-column:first-child .project-footer-column-title {
+    margin-bottom: clamp(20px, 2.35vw, 45.21px);
+  }
+
+  .project-footer-nav {
+    gap: 0;
+  }
+
+  .project-footer-link {
+    font-size: clamp(14px, 1.09vw, 21px);
+    line-height: 1.2102272396995908em;
+    color: #4d4d4d;
+    margin-bottom: clamp(10px, 0.83vw, 16px);
+  }
+
+  /* Разделительная линия - на всю ширину экрана */
+  .project-footer-divider {
+    position: static;
+    width: 100vw;
+    margin: clamp(30px, 2.5vw, 48px) calc(-50vw + 50%);
+  }
+
+  /* Нижняя секция */
+  .project-footer-bottom {
+    position: absolute;
+    top: 1094px;
+    left: clamp(102.68px, 5.35vw, 103px);
+    right: clamp(102.68px, 5.35vw, 103px);
+    width: auto;
+    gap: clamp(200px, 33.49vw, 643px);
+    padding: 0 0 clamp(30px, 2.5vw, 48px) 0;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .project-footer-bottom-links {
+    width: clamp(300px, 35.34vw, 678.59px);
+    max-width: 678.59px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0;
+    align-content: flex-start;
+  }
+
+  .project-footer-bottom-link {
+    font-size: 16px;
+    line-height: 1.2102272510528564em;
+    color: #4d4d4d;
+    white-space: nowrap;
+  }
+
+  /* Первая строка: Политика конфиденциальности и Согласие */
+  .project-footer-bottom-link:first-child {
+    width: 280.9px;
+    height: 19px;
+  }
+
+  .project-footer-bottom-link:last-child {
+    width: 386.62px;
+    height: 19px;
+    margin-left: 11.08px;
+  }
+
+  /* Вторая строка: ИНН */
+  .project-footer-bottom-link:nth-child(2) {
+    width: 36px;
+    height: 19px;
+    margin-top: 10px;
+  }
+
+  .project-footer-copyright {
+    font-size: 16px;
+    line-height: 1.2102272510528564em;
+    color: #4d4d4d;
+    width: clamp(200px, 20.14vw, 386.62px);
+    max-width: 386.62px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+}
+
+/* Большие десктопы (1921px - 2560px) */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .project-footer-container {
+    width: 100%;
+    max-width: 2560px;
+  }
+
+  .project-footer-main-blocks {
+    padding-top: clamp(102.77px, 4.02vw, 103px);
+  }
+
+  .project-footer-left-block {
+    width: clamp(413.71px, 16.15vw, 550px);
+  }
+
+  .project-footer-right-block {
+    max-width: clamp(994.32px, 38.84vw, 1200px);
+  }
+
+  .project-footer-contacts {
+    position: static;
+  }
+
+  .project-footer-middle-section {
+    position: static;
+  }
+
+  .project-footer-divider {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  .project-footer-bottom {
+    width: clamp(1708.62px, 66.74vw, 2100px);
+  }
+}
+
+/* Очень большие экраны (> 2560px) */
+@media (min-width: 2561px) {
+  .project-footer-container {
+    width: 100%;
+    max-width: 2560px;
+  }
+
+  .project-footer-main-blocks {
+    padding-top: 103px;
+  }
+
+  .project-footer-left-block {
+    width: 550px;
+  }
+
+  .project-footer-right-block {
+    max-width: 1200px;
+  }
+
+  .project-footer-contacts {
+    position: static;
+  }
+
+  .project-footer-middle-section {
+    position: static;
+  }
+
+  .project-footer-divider {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  .project-footer-bottom {
+    width: 2100px;
+  }
+}
+
+/* Project FAQ Section - стили для секции FAQ */
+.project-faq-section {
+  background: white;
+}
+
+/* Баннер с заголовком */
+.project-faq-banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.project-faq-banner-padding {
+  padding: 34px clamp(20px, 9.17vw, 176px);
+}
+
+.project-faq-banner-title {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.273em;
+  letter-spacing: 0%;
+  color: white;
+  margin: 0;
+}
+
+/* Контейнер аккордеонов */
+.project-faq-accordions-wrapper {
+  padding: 34px clamp(16px, 5.21vw, 100px) clamp(40px, 4.17vw, 80px);
+}
+
+.project-faq-accordions-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 1.56vw, 30px);
+  margin-top: 0;
+}
+
+/* Элемент аккордеона */
+.project-faq-item {
+  background: linear-gradient(to right, #fde68a, #fbbf24);
+  border-radius: clamp(10px, 0.78vw, 15px);
+  overflow: hidden;
+}
+
+/* Кнопка вопроса */
+.project-faq-question-button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(20px, 2.08vw, 40px) clamp(24px, 2.5vw, 48px);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: clamp(20px, 2.08vw, 40px);
+}
+
+.project-faq-question-text {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 1.67vw, 32px);
+  line-height: 1.273em;
+  letter-spacing: 0%;
+  color: white;
+  flex: 1;
+}
+
+/* Кнопка переключения */
+.project-faq-toggle-button {
+  width: clamp(40px, 4.17vw, 80px);
+  height: clamp(40px, 4.17vw, 80px);
+  min-width: clamp(40px, 4.17vw, 80px);
+  min-height: clamp(40px, 4.17vw, 80px);
+  border-radius: 50%;
+  background: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.project-faq-toggle-icon {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(32px, 3.33vw, 64px);
+  line-height: 1;
+  color: #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-2px);
+}
+
+/* Контент ответа */
+.project-faq-answer-wrapper {
+  overflow: hidden;
+}
+
+.project-faq-answer-content {
+  padding: 0 clamp(24px, 2.5vw, 48px) clamp(20px, 2.08vw, 40px);
+}
+
+.project-faq-answer-text {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.35vw, 26px);
+  line-height: 1.273em;
+  color: white;
+  margin: 0;
+}
+
+/* Мобильная версия (до 480px) */
+@media (max-width: 480px) {
+  .project-faq-banner-padding {
+    padding: 34px 20px;
+  }
+
+  .project-faq-banner-title {
+    font-size: 28px;
+  }
+
+  .project-faq-accordions-wrapper {
+    padding: 34px 16px 40px;
+  }
+
+  .project-faq-accordions-container {
+    gap: 16px;
+  }
+
+  .project-faq-question-button {
+    padding: 20px 24px;
+    gap: 20px;
+  }
+
+  .project-faq-question-text {
+    font-size: 16px;
+  }
+
+  .project-faq-toggle-button {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .project-faq-toggle-icon {
+    font-size: 32px;
+  }
+
+  .project-faq-answer-content {
+    padding: 0 24px 20px;
+  }
+
+  .project-faq-answer-text {
+    font-size: 14px;
+  }
+}
+
+/* Планшеты (481px - 768px включительно) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .project-faq-banner-padding {
+    padding: 45px clamp(20px, 2.6vw, 32px);
+  }
+
+  .project-faq-banner-title {
+    font-size: 36px;
+  }
+
+  .project-faq-accordions-wrapper {
+    padding: 45px clamp(16px, 2.08vw, 24px) clamp(40px, 5.21vw, 50px);
+  }
+
+  .project-faq-accordions-container {
+    gap: clamp(16px, 1.95vw, 20px);
+  }
+
+  .project-faq-question-button {
+    padding: clamp(20px, 2.6vw, 30px) clamp(24px, 3.13vw, 36px);
+    gap: clamp(20px, 2.6vw, 30px);
+  }
+
+  .project-faq-question-text {
+    font-size: clamp(16px, 2.34vw, 18px);
+  }
+
+  .project-faq-toggle-button {
+    width: clamp(40px, 5.21vw, 50px);
+    height: clamp(40px, 5.21vw, 50px);
+    min-width: clamp(40px, 5.21vw, 50px);
+    min-height: clamp(40px, 5.21vw, 50px);
+  }
+
+  .project-faq-toggle-icon {
+    font-size: clamp(32px, 4.17vw, 40px);
+  }
+
+  .project-faq-answer-content {
+    padding: 0 clamp(24px, 3.13vw, 36px) clamp(20px, 2.6vw, 30px);
+  }
+
+  .project-faq-answer-text {
+    font-size: clamp(14px, 1.56vw, 16px);
+  }
+}
+
+/* Средние планшеты (769px - 1036px включительно) */
+@media (min-width: 769px) and (max-width: 1036px) {
+  .project-faq-banner-padding {
+    padding: 60px clamp(32px, 3.09vw, 48px);
+  }
+
+  .project-faq-banner-title {
+    font-size: 54px;
+  }
+
+  .project-faq-accordions-wrapper {
+    padding: 60px clamp(24px, 2.32vw, 40px) clamp(50px, 4.83vw, 60px);
+  }
+
+  .project-faq-accordions-container {
+    gap: clamp(20px, 1.93vw, 24px);
+  }
+
+  .project-faq-question-button {
+    padding: clamp(30px, 2.9vw, 36px) clamp(36px, 3.47vw, 44px);
+    gap: clamp(30px, 2.9vw, 36px);
+  }
+
+  .project-faq-question-text {
+    font-size: clamp(18px, 2.32vw, 24px);
+  }
+
+  .project-faq-toggle-button {
+    width: clamp(50px, 4.83vw, 60px);
+    height: clamp(50px, 4.83vw, 60px);
+    min-width: clamp(50px, 4.83vw, 60px);
+    min-height: clamp(50px, 4.83vw, 60px);
+  }
+
+  .project-faq-toggle-icon {
+    font-size: clamp(40px, 3.88vw, 48px);
+  }
+
+  .project-faq-answer-content {
+    padding: 0 clamp(36px, 3.47vw, 44px) clamp(30px, 2.9vw, 36px);
+  }
+
+  .project-faq-answer-text {
+    font-size: clamp(16px, 1.35vw, 20px);
+  }
+}
+
+/* Большие планшеты/маленькие десктопы (1037px - 1366px включительно) */
+@media (min-width: 1037px) and (max-width: 1366px) {
+  .project-faq-banner-padding {
+    padding: 80px clamp(48px, 3.51vw, 64px);
+  }
+
+  .project-faq-banner-title {
+    font-size: 65px;
+  }
+
+  .project-faq-accordions-wrapper {
+    padding: 80px clamp(40px, 2.93vw, 60px) clamp(60px, 4.39vw, 70px);
+  }
+
+  .project-faq-accordions-container {
+    gap: clamp(24px, 1.76vw, 28px);
+  }
+
+  .project-faq-question-button {
+    padding: clamp(36px, 2.64vw, 40px) clamp(44px, 3.22vw, 48px);
+    gap: clamp(36px, 2.64vw, 40px);
+  }
+
+  .project-faq-question-text {
+    font-size: 24px;
+  }
+
+  .project-faq-toggle-button {
+    width: clamp(60px, 4.39vw, 70px);
+    height: clamp(60px, 4.39vw, 70px);
+    min-width: clamp(60px, 4.39vw, 70px);
+    min-height: clamp(60px, 4.39vw, 70px);
+  }
+
+  .project-faq-toggle-icon {
+    font-size: clamp(48px, 3.52vw, 54px);
+  }
+
+  .project-faq-answer-content {
+    padding: 0 clamp(44px, 3.22vw, 48px) clamp(36px, 2.64vw, 40px);
+  }
+
+  .project-faq-answer-text {
+    font-size: 16px;
+  }
+}
+
+/* Десктопы (1367px - 1920px) */
+@media (min-width: 1367px) and (max-width: 1920px) {
+  .project-faq-banner-padding {
+    padding: 100px clamp(64px, 3.33vw, 100px);
+  }
+
+  .project-faq-banner-title {
+    font-size: 100px;
+  }
+
+  .project-faq-accordions-wrapper {
+    padding: 100px clamp(60px, 3.13vw, 100px) clamp(70px, 3.65vw, 80px);
+  }
+
+  .project-faq-accordions-container {
+    gap: clamp(28px, 1.46vw, 30px);
+  }
+
+  .project-faq-question-button {
+    padding: clamp(40px, 2.08vw, 40px) clamp(48px, 2.5vw, 48px);
+    gap: clamp(40px, 2.08vw, 40px);
+  }
+
+  .project-faq-question-text {
+    font-size: clamp(24px, 1.25vw, 32px);
+  }
+
+  .project-faq-toggle-button {
+    width: clamp(70px, 3.65vw, 80px);
+    height: clamp(70px, 3.65vw, 80px);
+    min-width: clamp(70px, 3.65vw, 80px);
+    min-height: clamp(70px, 3.65vw, 80px);
+  }
+
+  .project-faq-toggle-icon {
+    font-size: clamp(54px, 2.78vw, 64px);
+  }
+
+  .project-faq-answer-content {
+    padding: 0 clamp(48px, 2.5vw, 48px) clamp(40px, 2.08vw, 40px);
+  }
+
+  .project-faq-answer-text {
+    font-size: clamp(16px, 0.83vw, 26px);
+  }
+}
+
+/* Большие десктопы (1921px - 2560px) */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .project-faq-banner-padding {
+    padding: 100px 100px;
+  }
+
+  .project-faq-banner-title {
+    font-size: 100px;
+  }
+
+  .project-faq-accordions-wrapper {
+    padding: 100px 100px 80px;
+  }
+
+  .project-faq-accordions-container {
+    gap: 30px;
+  }
+
+  .project-faq-question-button {
+    padding: 40px 48px;
+    gap: 40px;
+  }
+
+  .project-faq-question-text {
+    font-size: 32px;
+  }
+
+  .project-faq-toggle-button {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+  }
+
+  .project-faq-toggle-icon {
+    font-size: 64px;
+  }
+
+  .project-faq-answer-content {
+    padding: 0 48px 40px;
+  }
+
+  .project-faq-answer-text {
+    font-size: 26px;
+  }
+}
+
+/* Очень большие экраны (> 2560px) */
+@media (min-width: 2561px) {
+  .project-faq-banner-padding {
+    padding: 100px 100px;
+  }
+
+  .project-faq-banner-title {
+    font-size: 100px;
+  }
+
+  .project-faq-accordions-wrapper {
+    padding: 100px 100px 80px;
+    max-width: 2560px;
+  }
+
+  .project-faq-accordions-container {
+    gap: 30px;
+  }
+
+  .project-faq-question-button {
+    padding: 40px 48px;
+    gap: 40px;
+  }
+
+  .project-faq-question-text {
+    font-size: 32px;
+  }
+
+  .project-faq-toggle-button {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+  }
+
+  .project-faq-toggle-icon {
+    font-size: 64px;
+  }
+
+  .project-faq-answer-content {
+    padding: 0 48px 40px;
+  }
+
+  .project-faq-answer-text {
+    font-size: 26px;
+  }
+}

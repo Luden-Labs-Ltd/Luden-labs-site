@@ -6,3 +6,4 @@ export { ProjectDescriptionBanner } from "./ProjectDescriptionBanner";
 export { ProjectFeatureCard } from "./ProjectFeatureCard";
 export { ProjectFooter } from "./ProjectFooter";
 export { ProjectNotFound } from "./ProjectNotFound";
+export { ProjectFAQSection } from "./ProjectFAQSection";

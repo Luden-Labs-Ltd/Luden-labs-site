@@ -17,9 +17,17 @@ export function ProjectContentSection({
 }: ProjectContentSectionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        delay: 0.2,
+      }}
       className={clsx(
         "mx-auto max-w-[1920px] px-4 py-8 md:px-8 md:py-12 lg:px-12 lg:py-16",
         className,
@@ -34,9 +42,17 @@ export function ProjectContentSection({
           {image && (
             <div className='flex items-start justify-center lg:justify-end'>
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4 }}
+                initial={{
+                  opacity: 0,
+                  scale: 0.95,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  delay: 0.4,
+                }}
                 className='relative'
               >
                 <img

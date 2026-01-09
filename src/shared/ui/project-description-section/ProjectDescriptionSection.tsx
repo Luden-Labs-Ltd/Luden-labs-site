@@ -24,9 +24,15 @@ export function ProjectDescriptionSection({
 }: ProjectDescriptionSectionProps) {
   return (
     <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.2 }}
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      transition={{
+        delay: 0.2,
+      }}
       className={clsx("project-description-section bg-white", className)}
     >
       {/* Заголовок */}
@@ -68,9 +74,17 @@ export function ProjectDescriptionSection({
             {features.map((feature, index) => (
               <motion.div
                 key={feature.number}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + index * 0.1 }}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  delay: 0.4 + index * 0.1,
+                }}
                 className='project-feature-card relative'
               >
                 {/* Большой номер в левом верхнем углу, частично перекрывает карточку */}

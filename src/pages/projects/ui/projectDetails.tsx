@@ -5,7 +5,7 @@ import { ProjectDescriptionSection } from "@/shared/ui/project-description-secti
 import { Navbar } from "@/shared/ui/navbar";
 import headerBg from "@/shared/assets/images/projects/yellow-orange-gradient.png?format=webp";
 
-export function ProjectDetailPage() {
+export function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
 
   // Временные данные для первого проекта (LUDEN CARDS)

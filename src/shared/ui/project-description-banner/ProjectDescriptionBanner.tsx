@@ -23,9 +23,17 @@ export function ProjectDescriptionBanner({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3 }}
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        delay: 0.3,
+      }}
       className={clsx(
         "project-description-banner w-full",
         !backgroundImage && "bg-gradient-to-r from-yellow-300 to-yellow-500",

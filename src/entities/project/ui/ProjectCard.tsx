@@ -18,9 +18,17 @@ export function ProjectCard({
   return (
     <motion.div
       className='overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl'
-      whileHover={{ y: -8 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileHover={{
+        y: -8,
+      }}
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
     >
       {/* Image */}
       <div className='relative h-48 overflow-hidden'>

@@ -49,8 +49,14 @@ export function SectionLayout({
       <div className='mx-auto max-w-7xl'>
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{
+            opacity: 0,
+            y: -20,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
           className='mb-8'
         >
           <Button
@@ -75,9 +81,17 @@ export function SectionLayout({
         {/* Hero Image */}
         {heroImage && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
+            initial={{
+              opacity: 0,
+              scale: 0.95,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              delay: 0.2,
+            }}
             className='mb-8 overflow-hidden rounded-2xl shadow-2xl'
           >
             <img
@@ -90,9 +104,15 @@ export function SectionLayout({
 
         {/* Content */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            delay: 0.3,
+          }}
         >
           {children}
         </motion.div>

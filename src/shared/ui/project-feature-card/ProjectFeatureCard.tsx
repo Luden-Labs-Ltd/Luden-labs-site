@@ -16,9 +16,17 @@ export function ProjectFeatureCard({
 }: ProjectFeatureCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4 }}
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        delay: 0.4,
+      }}
       className={clsx("project-feature-card", className)}
     >
       <div className='relative rounded-[30px] border border-yellow-400 bg-white p-6 md:p-8 lg:p-10'>

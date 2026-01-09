@@ -20,8 +20,13 @@ export function LudenCard({
   return (
     <motion.div
       className={`overflow-hidden rounded-lg shadow-md ${variant === "highlight" ? "border-2 border-amber-400 bg-amber-200" : "border border-amber-300 bg-amber-100"} ${className} `}
-      whileHover={{ y: -4, boxShadow: "0 10px 25px rgba(0,0,0,0.15)" }}
-      transition={{ duration: 0.2 }}
+      whileHover={{
+        y: -4,
+        boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+      }}
+      transition={{
+        duration: 0.2,
+      }}
     >
       {/* Header */}
       <div

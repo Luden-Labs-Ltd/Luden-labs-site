@@ -1,0 +1,8 @@
+export { ProjectDetail } from "./projectDetails";
+export { ProjectHeader } from "./ProjectHeader";
+export { ProjectContentSection } from "./ProjectContentSection";
+export { ProjectDescriptionSection } from "./ProjectDescriptionSection";
+export { ProjectDescriptionBanner } from "./ProjectDescriptionBanner";
+export { ProjectFeatureCard } from "./ProjectFeatureCard";
+export { ProjectFooter } from "./ProjectFooter";
+export { ProjectNotFound } from "./ProjectNotFound";

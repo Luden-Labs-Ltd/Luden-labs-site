@@ -1,7 +1,5 @@
-import { ProjectDetail } from "./ui/projectDetails";
+import { ProjectDetail } from "./ui";
 
 export function ProjectDetailPage() {
-  return <>
-    <ProjectDetail />
-  </>
+  return <ProjectDetail />;
 }

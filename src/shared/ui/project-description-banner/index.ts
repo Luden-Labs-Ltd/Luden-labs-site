@@ -1,1 +1,0 @@
-export { ProjectDescriptionBanner } from "./ProjectDescriptionBanner";

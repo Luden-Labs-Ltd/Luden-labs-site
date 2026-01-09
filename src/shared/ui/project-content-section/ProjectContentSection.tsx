@@ -1,8 +1,9 @@
+import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
 
 interface ProjectContentSectionProps {
-  children: React.ReactNode;
+  children: ReactNode;
   image?: string;
   imageAlt?: string;
   className?: string;

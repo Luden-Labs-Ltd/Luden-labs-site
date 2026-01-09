@@ -3,7 +3,7 @@ import { ProjectHeader } from '@/shared/ui/project-header';
 import { ProjectContentSection } from '@/shared/ui/project-content-section'
 import { ProjectDescriptionSection } from '@/shared/ui/project-description-section';
 import { Navbar } from '@/shared/ui/navbar';
-import headerBg from '@/shared/assets/images/projects/yellow-orange-gradient.png'
+import headerBg from '@/shared/assets/images/projects/yellow-orange-gradient.png?format=webp'
 
 export function ProjectDetailPage() {
   const { id } = useParams<{ id: string }>();

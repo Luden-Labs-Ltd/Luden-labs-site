@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import type { ProcessedImageMetadata  } from 'vite-imagetools';
+import type { ProcessedImageMetadata } from 'vite-imagetools';
 
 interface ProjectHeaderProps {
   title: string;
-  backgroundImage?: string | ProcessedImageMetadata ;
+  backgroundImage?: string | ProcessedImageMetadata;
   gradientFrom?: string;
   gradientTo?: string;
   className?: string;

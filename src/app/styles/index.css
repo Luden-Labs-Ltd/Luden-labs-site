@@ -1,1 +1,573 @@
 @import "tailwindcss";
+
+@theme {
+  /* Color themes */
+  --color-ludic-50: #fffbeb;
+  --color-ludic-100: #fef3c7;
+  --color-ludic-200: #fde68a;
+  --color-ludic-300: #fcd34d;
+  --color-ludic-400: #fbbf24;
+  --color-ludic-500: #f59e0b;
+  --color-ludic-600: #d97706;
+  --color-ludic-700: #b45309;
+  --color-ludic-800: #92400e;
+  --color-ludic-900: #78350f;
+
+  --color-energy-50: #fef2f2;
+  --color-energy-100: #fee2e2;
+  --color-energy-200: #fecaca;
+  --color-energy-300: #fca5a5;
+  --color-energy-400: #f87171;
+  --color-energy-500: #ef4444;
+  --color-energy-600: #dc2626;
+  --color-energy-700: #b91c1c;
+  --color-energy-800: #991b1b;
+  --color-energy-900: #7f1d1d;
+
+  --color-space-50: #f0f9ff;
+  --color-space-100: #e0f2fe;
+  --color-space-200: #bae6fd;
+  --color-space-300: #7dd3fc;
+  --color-space-400: #38bdf8;
+  --color-space-500: #0ea5e9;
+  --color-space-600: #0284c7;
+  --color-space-700: #0369a1;
+  --color-space-800: #075985;
+  --color-space-900: #0c4a6e;
+
+  --color-retention-50: #faf5ff;
+  --color-retention-100: #f3e8ff;
+  --color-retention-200: #e9d5ff;
+  --color-retention-300: #d8b4fe;
+  --color-retention-400: #c084fc;
+  --color-retention-500: #a855f7;
+  --color-retention-600: #9333ea;
+  --color-retention-700: #7e22ce;
+  --color-retention-800: #6b21a8;
+  --color-retention-900: #581c87;
+
+  /* Fonts */
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-display: 'Poppins', sans-serif;
+  --font-family-days-one: 'Days One', sans-serif;
+  --font-family-montserrat: 'Montserrat', sans-serif;
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 8s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+body {
+  font-family: var(--font-family-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-display);
+}
+
+/* Project Content Border - градиентный бордер (сверху нет, снизу четкий, по бокам плавно исчезает) */
+.project-content-border {
+  position: relative;
+  border-top: none;
+  border-bottom: 3px solid #5E6061;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.project-content-border::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(94, 96, 97, 0.2) 20%,
+    rgba(94, 96, 97, 0.5) 40%,
+    rgba(94, 96, 97, 0.7) 60%,
+    rgba(94, 96, 97, 0.85) 80%,
+    #5E6061 100%
+  );
+  pointer-events: none;
+}
+
+.project-content-border::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(94, 96, 97, 0.2) 20%,
+    rgba(94, 96, 97, 0.5) 40%,
+    rgba(94, 96, 97, 0.7) 60%,
+    rgba(94, 96, 97, 0.85) 80%,
+    #5E6061 100%
+  );
+  pointer-events: none;
+}
+
+/* Project Content Text - стили текста контента */
+.project-content-text {
+  font-family: 'Days One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #5E6061;
+  text-align: left;
+}
+
+/* Project Header - адаптивное масштабирование */
+.project-header-title {
+  font-size: clamp(45px, 12vw, 196px);
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.project-header-banner {
+  height: clamp(106px, 22vh, 300px);
+  min-height: clamp(106px, 22vh, 300px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Мобильная версия (до 480px) */
+@media (max-width: 480px) {
+  .project-header-title {
+    font-size: 45px;
+  }
+  
+  .project-header-banner {
+    height: 106px;
+    min-height: 106px;
+  }
+}
+
+/* Планшеты (481px - 768px включительно) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .project-header-title {
+    font-size: clamp(45px, 10vw, 75px);
+  }
+  
+  .project-header-banner {
+    height: clamp(106px, 16vh, 125px);
+    min-height: clamp(106px, 16vh, 125px);
+  }
+}
+
+/* Средние планшеты (769px - 1036px включительно) */
+@media (min-width: 769px) and (max-width: 1036px) {
+  .project-header-title {
+    font-size: clamp(75px, 9.5vw, 100px);
+  }
+  
+  .project-header-banner {
+    height: clamp(125px, 15vh, 155px);
+    min-height: clamp(125px, 15vh, 155px);
+  }
+}
+
+/* Большие планшеты/маленькие десктопы (1037px - 1366px включительно) */
+@media (min-width: 1037px) and (max-width: 1366px) {
+  .project-header-title {
+    font-size: clamp(100px, 9vw, 135px);
+  }
+  
+  .project-header-banner {
+    height: clamp(155px, 15vh, 200px);
+    min-height: clamp(155px, 15vh, 200px);
+  }
+}
+
+/* Десктопы (1367px - 1920px) */
+@media (min-width: 1367px) and (max-width: 1920px) {
+  .project-header-title {
+    font-size: clamp(135px, 10vw, 196px);
+  }
+  
+  .project-header-banner {
+    height: clamp(200px, 15.6vh, 300px);
+    min-height: clamp(200px, 15.6vh, 300px);
+  }
+}
+
+/* Большие десктопы (1921px - 2560px) */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .project-header-title {
+    font-size: clamp(196px, 8vw, 240px);
+  }
+  
+  .project-header-banner {
+    height: clamp(300px, 12vh, 360px);
+    min-height: clamp(300px, 12vh, 360px);
+  }
+}
+
+/* Очень большие экраны (> 2560px) */
+@media (min-width: 2561px) {
+  .project-header-title {
+    font-size: clamp(240px, 7vw, 280px);
+  }
+  
+  .project-header-banner {
+    height: clamp(360px, 11vh, 420px);
+    min-height: clamp(360px, 11vh, 420px);
+  }
+}
+
+/* Project Description Section - стили для блока ОПИСАНИЕ */
+.project-description-section {
+  background: white;
+}
+
+/* Заголовок ОПИСАНИЕ */
+.project-description-title {
+  font-family: 'Days One', sans-serif;
+  font-weight: 400;
+  font-size: clamp(32px, 3.9vw, 75px);
+  color: #5E6061;
+  letter-spacing: 0%;
+  line-height: 1.273em;
+}
+
+/* Желтый баннер с текстом */
+.project-description-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-description-banner-text {
+  font-family: 'Days One', sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 1.67vw, 32px);
+  line-height: 1.273em;
+  letter-spacing: 0%;
+  color: white;
+  max-width: clamp(900px, 81.7vw, 1568px);
+  margin: 0 auto;
+}
+
+/* Карточки с фичами - gradient border */
+.project-feature-card-border {
+  position: relative;
+  background: white;
+  border-radius: clamp(10px, 0.78vw, 15px);
+  padding: clamp(2px, 0.16vw, 3px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 203, 30, 1) 100%);
+}
+
+.project-feature-card-inner {
+  background: white;
+  border-radius: clamp(8px, 0.625vw, 12px);
+  padding: clamp(24px, 2.45vw, 47px) clamp(16px, 1.61vw, 31px);
+  min-height: clamp(280px, 19.84vw, 381px);
+}
+
+.project-feature-card {
+  position: relative;
+}
+
+.project-feature-number {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: clamp(80px, 10.42vw, 200px);
+  line-height: 1.219em;
+  color: #8C8C8C;
+  user-select: none;
+  pointer-events: none;
+}
+
+.project-feature-number-wrapper {
+  position: absolute;
+  z-index: 10;
+  left: -10px;
+  top: -20px;
+}
+
+.project-feature-title {
+  font-family: 'Days One', sans-serif;
+  font-weight: 400;
+  font-size: clamp(18px, 1.88vw, 36px);
+  line-height: 1.273em;
+  letter-spacing: 0%;
+  color: #5E6061;
+}
+
+.project-feature-description {
+  font-family: 'Days One', sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.35vw, 26px);
+  line-height: 1.273em;
+  color: #5E6061;
+}
+
+/* Адаптивные отступы */
+.project-description-banner-padding {
+  padding: clamp(32px, 3.28vw, 63px) clamp(20px, 9.17vw, 176px) clamp(140px, 15.1vw, 290px);
+}
+
+.project-description-cards-wrapper {
+  padding: 0 clamp(16px, 5.21vw, 100px) clamp(30px, 3.13vw, 60px);
+  margin-top: 0;
+}
+
+.project-feature-content-padding {
+  padding-left: clamp(40px, 4.84vw, 93px);
+}
+
+.project-feature-title-margin {
+  margin-bottom: clamp(20px, 2.45vw, 47px);
+}
+
+/* Мобильная версия (до 480px) - 360px из Figma */
+@media (max-width: 480px) {
+  .project-description-title {
+    font-size: 24px;
+  }
+  
+  .project-description-banner-text {
+    font-size: 14px;
+  }
+  
+  .project-feature-number {
+    font-size: 90px;
+  }
+  
+  .project-feature-title {
+    font-size: 18px;
+  }
+  
+  .project-feature-description {
+    font-size: 16px;
+  }
+  
+  .project-feature-card-inner {
+    min-height: 214px;
+  }
+  
+  .project-feature-number-wrapper {
+    left: 10px;
+    top: -5px;
+  }
+  
+  .project-description-cards-wrapper {
+    margin-top: 0;
+  }
+  
+  .project-description-banner-padding {
+    padding: 32px 20px 32px;
+  }
+}
+
+/* Планшеты (481px - 768px включительно) - 768px из Figma */
+@media (min-width: 481px) and (max-width: 768px) {
+  .project-description-title {
+    font-size: clamp(24px, 4.7vw, 36px);
+  }
+  
+  .project-description-banner-text {
+    font-size: clamp(14px, 2.34vw, 18px);
+  }
+  
+  .project-feature-number {
+    font-size: clamp(90px, 9.77vw, 75px);
+  }
+  
+  .project-feature-title {
+    font-size: clamp(18px, 1.82vw, 14px);
+  }
+  
+  .project-feature-description {
+    font-size: clamp(16px, 1.56vw, 12px);
+  }
+  
+  .project-feature-card-inner {
+    min-height: clamp(214px, 24.87vw, 191px);
+  }
+  
+  .project-feature-number-wrapper {
+    left: -10px;
+    top: -10px;
+  }
+  
+  .project-description-cards-wrapper {
+    margin-top: -100px;
+  }
+}
+
+/* Средние планшеты (769px - 1036px включительно) - 1036px из Figma */
+@media (min-width: 769px) and (max-width: 1036px) {
+  .project-description-title {
+    font-size: clamp(36px, 5.21vw, 54px);
+  }
+  
+  .project-description-banner-text {
+    font-size: clamp(18px, 2.32vw, 24px);
+  }
+  
+  .project-feature-number {
+    font-size: clamp(75px, 9.65vw, 100px);
+  }
+  
+  .project-feature-title {
+    font-size: clamp(14px, 1.74vw, 18px);
+  }
+  
+  .project-feature-description {
+    font-size: clamp(12px, 1.35vw, 14px);
+  }
+  
+  .project-feature-card-inner {
+    min-height: clamp(191px, 16.7vw, 173px);
+  }
+  
+  .project-feature-number-wrapper {
+    left: -12px;
+    top: -25px;
+  }
+  
+  .project-description-cards-wrapper {
+    margin-top: -120px;
+  }
+}
+
+/* Большие планшеты/маленькие десктопы (1037px - 1366px включительно) - 1368px из Figma */
+@media (min-width: 1037px) and (max-width: 1366px) {
+  .project-description-title {
+    font-size: clamp(54px, 4.39vw, 60px);
+  }
+  
+  .project-description-banner-text {
+    font-size: 24px;
+  }
+  
+  .project-feature-number {
+    font-size: clamp(100px, 11.7vw, 160px);
+  }
+  
+  .project-feature-title {
+    font-size: clamp(18px, 1.75vw, 24px);
+  }
+  
+  .project-feature-description {
+    font-size: 16px;
+  }
+  
+  .project-feature-card-inner {
+    min-height: clamp(173px, 19.82vw, 271px);
+  }
+  
+  .project-feature-number-wrapper {
+    left: -15px;
+    top: -35px;
+  }
+  
+  .project-description-cards-wrapper {
+    margin-top: -150px;
+  }
+}
+
+/* Десктопы (1367px - 1920px) - 1920px из Figma */
+@media (min-width: 1367px) and (max-width: 1920px) {
+  .project-description-title {
+    font-size: clamp(60px, 3.91vw, 75px);
+  }
+  
+  .project-description-banner-text {
+    font-size: clamp(24px, 1.67vw, 32px);
+  }
+  
+  .project-feature-number {
+    font-size: clamp(160px, 10.42vw, 200px);
+  }
+  
+  .project-feature-title {
+    font-size: clamp(24px, 1.88vw, 36px);
+  }
+  
+  .project-feature-description {
+    font-size: clamp(16px, 1.35vw, 26px);
+  }
+  
+  .project-feature-card-inner {
+    min-height: clamp(271px, 19.84vw, 381px);
+  }
+  
+  .project-feature-number-wrapper {
+    left: -20px;
+    top: -45px;
+  }
+  
+  .project-description-cards-wrapper {
+    margin-top: -190px;
+  }
+}
+
+/* Большие десктопы (1921px - 2560px) */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .project-description-title {
+    font-size: clamp(75px, 3.13vw, 80px);
+  }
+  
+  .project-description-banner-text {
+    font-size: clamp(32px, 1.41vw, 36px);
+  }
+  
+  .project-feature-number {
+    font-size: clamp(200px, 8.59vw, 220px);
+  }
+  
+  .project-feature-title {
+    font-size: clamp(36px, 1.56vw, 40px);
+  }
+  
+  .project-feature-description {
+    font-size: clamp(26px, 1.09vw, 28px);
+  }
+  
+  .project-feature-card-inner {
+    min-height: clamp(381px, 16.41vw, 420px);
+  }
+}
+
+/* Очень большие экраны (> 2560px) */
+@media (min-width: 2561px) {
+  .project-description-title {
+    font-size: 80px;
+  }
+  
+  .project-description-banner-text {
+    font-size: 36px;
+  }
+  
+  .project-feature-number {
+    font-size: 220px;
+  }
+  
+  .project-feature-title {
+    font-size: 40px;
+  }
+  
+  .project-feature-description {
+    font-size: 28px;
+  }
+  
+  .project-feature-card-inner {
+    min-height: 420px;
+  }
+}

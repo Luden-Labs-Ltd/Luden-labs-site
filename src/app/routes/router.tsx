@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { ProjectDetailPage } from "@/pages/projects";
 import { LandingPage } from "@/pages/landing";
-import { MapPage } from '@/pages/map';
+import { MapPage } from "@/pages/map";
 
 export const router = createBrowserRouter([
   {

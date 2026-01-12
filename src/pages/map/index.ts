@@ -1,1 +1,1 @@
-export { MapPage } from './ui/index';
+export { MapPage } from "./ui/index";

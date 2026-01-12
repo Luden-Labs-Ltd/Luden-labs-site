@@ -1,7 +1,5 @@
-import { Map } from './Map'
+import { Map } from "./Map";
 
 export function MapPage() {
-  return ( 
-    <Map />
-  );
+  return <Map />;
 }

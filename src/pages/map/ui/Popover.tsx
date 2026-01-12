@@ -1,15 +1,14 @@
-import type { Project } from '@/entities/project'
-import { Card } from '@/shared/ui';
-import { X } from 'lucide-react'
+import type { Project } from "@/entities/project";
+import { Card } from "@/shared/ui";
+import { X } from "lucide-react";
 
 type Props = {
   currentProject?: Project;
   onClick?: () => void;
   onVisited?: () => void;
-}
+};
 
 export function Popover({ currentProject, onClick, onVisited }: Props) {
-
   // Records the current project as visited in localStorage and notifies the parent.
   const setProjectAsVisited = () => {
     // Persist the current project's name to localStorage if it's not already there.
@@ -42,62 +41,53 @@ export function Popover({ currentProject, onClick, onVisited }: Props) {
 
     // Let the parent update derived UI (e.g., opacity) immediately.
     onVisited?.();
-  }
+  };
 
   return (
-    <Card className="absolute bottom-10 left-12 w-104">
-        <section className='flex flex-col w-full'>
-          {/* top section */}
-          <section className='flex justify-between items-center'>
-            {/* label */}
-            <span className='bg-red-500 flex items-center text-white text-xs rounded-full px-4.5 h-6'>
-              {currentProject!.category}
-            </span>
-            {/* 'X' button */}
-            <button 
-              className='bg-black/40 rounded-full p-0.5'
-              onClick={onClick}  
-            >
-              <X className='text-white w-6 h-6 '/>
-            </button>
-
-          </section>
-
-          {/* Image section */}
-          <section className='h-[200px] aspect-video bg-black mt-4 overflow-hidden rounded-2xl'>
-            {/* Image */}
-            <img 
-              src="https://img.freepik.com/premium-vector/city-street-small-town-walk-building-people-walking-abstract-concept-graphic-design_133260-4131.jpg" 
-              alt="" 
-              className='w-full h-full object-cover'
-            />
-
-          </section>
-          {/* section with heading and description */}
-          <section className='flex flex-col mt-4'>
-              {/* heading */}
-              <h3 className='text-lg mb-1'>{currentProject!.name}</h3>
-              {/* description */}
-              <p className='whitespace-pre-wrap text-sm'>
-                {currentProject!.description}
-              </p>
-
-          </section>
-
-          {/* section with 'more info' button */}
-          <section className='flex mt-4'>
-            {/* button */}
-            <button
-              className='bg-green-800 flex items-center text-white  rounded-full px-10 py-2 text-sm'
-              onClick={() => setProjectAsVisited()}  
-            >
-              Узнать больше
-            </button>
-            
-          </section>
-
+    <Card className='absolute bottom-10 left-12 w-104'>
+      <section className='flex w-full flex-col'>
+        {/* top section */}
+        <section className='flex items-center justify-between'>
+          {/* label */}
+          <span className='flex h-6 items-center rounded-full bg-red-500 px-4.5 text-xs text-white'>
+            {currentProject!.category}
+          </span>
+          {/* 'X' button */}
+          <button className='rounded-full bg-black/40 p-0.5' onClick={onClick}>
+            <X className='h-6 w-6 text-white' />
+          </button>
         </section>
 
-      </Card>
-  )
+        {/* Image section */}
+        <section className='mt-4 aspect-video h-[200px] overflow-hidden rounded-2xl bg-black'>
+          {/* Image */}
+          <img
+            src='https://img.freepik.com/premium-vector/city-street-small-town-walk-building-people-walking-abstract-concept-graphic-design_133260-4131.jpg'
+            alt=''
+            className='h-full w-full object-cover'
+          />
+        </section>
+        {/* section with heading and description */}
+        <section className='mt-4 flex flex-col'>
+          {/* heading */}
+          <h3 className='mb-1 text-lg'>{currentProject!.name}</h3>
+          {/* description */}
+          <p className='text-sm whitespace-pre-wrap'>
+            {currentProject!.description}
+          </p>
+        </section>
+
+        {/* section with 'more info' button */}
+        <section className='mt-4 flex'>
+          {/* button */}
+          <button
+            className='flex items-center rounded-full bg-green-800 px-10 py-2 text-sm text-white'
+            onClick={() => setProjectAsVisited()}
+          >
+            Узнать больше
+          </button>
+        </section>
+      </section>
+    </Card>
+  );
 }

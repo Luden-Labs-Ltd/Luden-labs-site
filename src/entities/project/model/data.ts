@@ -10,7 +10,8 @@ export const projectsData: Record<number, Project> = {
   1: {
     id: 1,
     name: "Enola",
-    description: "Description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 ",
+    description:
+      "Description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 description 1 ",
     category: "Category",
     sections: [
       {
@@ -26,7 +27,8 @@ export const projectsData: Record<number, Project> = {
   2: {
     id: 2,
     name: "Spark",
-    description: "Description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 ",
+    description:
+      "Description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 description 2 ",
     category: "category 2",
     sections: [
       {
@@ -42,7 +44,8 @@ export const projectsData: Record<number, Project> = {
   3: {
     id: 3,
     name: "Virtual Fishing",
-    description: "Description 3 description 3 description 3 description 3 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 ",
+    description:
+      "Description 3 description 3 description 3 description 3 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 ",
     category: "category 3",
     sections: [
       {
@@ -58,7 +61,8 @@ export const projectsData: Record<number, Project> = {
   4: {
     id: 4,
     name: "Pulson",
-    description: "Description 3 description 3 description 3 description 3 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 ",
+    description:
+      "Description 3 description 3 description 3 description 3 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 ",
     category: "category 3",
     sections: [
       {
@@ -74,7 +78,8 @@ export const projectsData: Record<number, Project> = {
   5: {
     id: 5,
     name: "Tresor",
-    description: "Description 3 description 3 description 3 description 3 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 ",
+    description:
+      "Description 3 description 3 description 3 description 3 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 ",
     category: "category 3",
     sections: [
       {
@@ -90,7 +95,8 @@ export const projectsData: Record<number, Project> = {
   6: {
     id: 6,
     name: "SOS-band",
-    description: "Description 3 description 3 description 3 description 3 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 ",
+    description:
+      "Description 3 description 3 description 3 description 3 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 description 2 description 2 description 2 description 2 description 3 ",
     category: "category 3",
     sections: [
       {

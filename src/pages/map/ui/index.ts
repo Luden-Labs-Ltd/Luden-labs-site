@@ -1,1 +1,1 @@
-export { MapPage } from './Page';
+export { MapPage } from "./Page";

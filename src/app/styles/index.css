@@ -58,7 +58,6 @@
   --animate-spin-slow: spin 8s linear infinite;
 
   @keyframes float {
-
     0%,
     100% {
       transform: translateY(0px);
@@ -99,13 +98,15 @@ h6 {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom,
-      transparent 0%,
-      rgba(94, 96, 97, 0.2) 20%,
-      rgba(94, 96, 97, 0.5) 40%,
-      rgba(94, 96, 97, 0.7) 60%,
-      rgba(94, 96, 97, 0.85) 80%,
-      #5e6061 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(94, 96, 97, 0.2) 20%,
+    rgba(94, 96, 97, 0.5) 40%,
+    rgba(94, 96, 97, 0.7) 60%,
+    rgba(94, 96, 97, 0.85) 80%,
+    #5e6061 100%
+  );
   pointer-events: none;
 }
 
@@ -116,13 +117,15 @@ h6 {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom,
-      transparent 0%,
-      rgba(94, 96, 97, 0.2) 20%,
-      rgba(94, 96, 97, 0.5) 40%,
-      rgba(94, 96, 97, 0.7) 60%,
-      rgba(94, 96, 97, 0.85) 80%,
-      #5e6061 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(94, 96, 97, 0.2) 20%,
+    rgba(94, 96, 97, 0.5) 40%,
+    rgba(94, 96, 97, 0.7) 60%,
+    rgba(94, 96, 97, 0.85) 80%,
+    #5e6061 100%
+  );
   pointer-events: none;
 }
 
@@ -276,9 +279,11 @@ h6 {
   background: white;
   border-radius: clamp(10px, 0.78vw, 15px);
   padding: clamp(2px, 0.16vw, 3px);
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 203, 30, 1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 203, 30, 1) 100%
+  );
 }
 
 .project-feature-card-inner {
@@ -328,7 +333,8 @@ h6 {
 
 /* Адаптивные отступы */
 .project-description-banner-padding {
-  padding: clamp(32px, 3.28vw, 63px) clamp(20px, 9.17vw, 176px) clamp(140px, 15.1vw, 290px);
+  padding: clamp(32px, 3.28vw, 63px) clamp(20px, 9.17vw, 176px)
+    clamp(140px, 15.1vw, 290px);
 }
 
 .project-description-cards-wrapper {
@@ -2190,7 +2196,6 @@ h6 {
 
 /* Планшеты (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-
   .about-hero-section {
     height: 770px;
   }
@@ -2235,7 +2240,6 @@ h6 {
 
 /* Средние планшеты (769px - 1036px) */
 @media (min-width: 769px) and (max-width: 1036px) {
-
   .about-hero-section {
     height: 930px;
   }
@@ -2280,7 +2284,6 @@ h6 {
 
 /* Большие планшеты/маленькие десктопы (1037px - 1366px) */
 @media (min-width: 1037px) and (max-width: 1366px) {
-
   .about-hero-section {
     height: 1090px;
   }
@@ -2325,7 +2328,6 @@ h6 {
 
 /* Десктопы (1367px - 1920px) */
 @media (min-width: 1367px) and (max-width: 1920px) {
-
   .about-hero-section {
     height: clamp(1220px, 69.27vw, 1330px);
   }
@@ -2335,7 +2337,7 @@ h6 {
   }
 
   .about-hero-earth {
-    top: clamp(340px, 22.40vw, 430px);
+    top: clamp(340px, 22.4vw, 430px);
     height: 1080px;
   }
 
@@ -2370,7 +2372,6 @@ h6 {
 
 /* Большие десктопы (1921px - 2560px) */
 @media (min-width: 1921px) and (max-width: 2560px) {
-
   .about-hero-section {
     height: 1300px;
   }
@@ -2415,7 +2416,6 @@ h6 {
 
 /* Очень большие экраны (> 2560px) */
 @media (min-width: 2561px) {
-
   .about-hero-section {
     height: 1400px;
   }

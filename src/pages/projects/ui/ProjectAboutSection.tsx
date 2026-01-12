@@ -12,9 +12,7 @@ export function ProjectAboutSection({ className }: ProjectAboutSectionProps) {
   const navigate = useNavigate();
 
   return (
-    <section
-      className={clsx("about-hero-section relative w-full", className)}
-    >
+    <section className={clsx("about-hero-section relative w-full", className)}>
       {/* Фоновое изображение Stars (звездное небо) */}
       <div className='about-hero-background absolute inset-0'>
         <img
@@ -40,8 +38,8 @@ export function ProjectAboutSection({ className }: ProjectAboutSectionProps) {
       <div className='about-hero-text-top'>
         <p className='about-hero-text max-w-[1299px] text-center text-white'>
           Мы Luden Labs и мы сосредоточены на создании игровых сценариев,
-          которые улучшают и совершенствуют человеческое взаимодействие,
-          делая мир более взаимосвязанным и гармоничным.
+          которые улучшают и совершенствуют человеческое взаимодействие, делая
+          мир более взаимосвязанным и гармоничным.
         </p>
       </div>
 
@@ -49,14 +47,14 @@ export function ProjectAboutSection({ className }: ProjectAboutSectionProps) {
       <div className='about-hero-bottom-white'>
         <div className='about-hero-bottom-white-card flex w-full flex-col items-center gap-[18px]'>
           <p className='about-hero-bottom-text-white text-center'>
-            Для того чтобы вернуться на карту и продолжить изучать наши
-            кейсы, переходи по кнопке ниже
+            Для того чтобы вернуться на карту и продолжить изучать наши кейсы,
+            переходи по кнопке ниже
           </p>
           <Button
             variant='primary'
             onClick={() => navigate("/")}
             className='about-hero-button rounded-[15px]'
-            style={{ backgroundColor: '#ACD97C', color: '#ffffff' }}
+            style={{ backgroundColor: "#ACD97C", color: "#ffffff" }}
           >
             Вернуться
           </Button>

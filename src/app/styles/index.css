@@ -58,10 +58,12 @@
   --animate-spin-slow: spin 8s linear infinite;
 
   @keyframes float {
+
     0%,
     100% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(-20px);
     }
@@ -97,15 +99,13 @@ h6 {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(94, 96, 97, 0.2) 20%,
-    rgba(94, 96, 97, 0.5) 40%,
-    rgba(94, 96, 97, 0.7) 60%,
-    rgba(94, 96, 97, 0.85) 80%,
-    #5e6061 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(94, 96, 97, 0.2) 20%,
+      rgba(94, 96, 97, 0.5) 40%,
+      rgba(94, 96, 97, 0.7) 60%,
+      rgba(94, 96, 97, 0.85) 80%,
+      #5e6061 100%);
   pointer-events: none;
 }
 
@@ -116,15 +116,13 @@ h6 {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(94, 96, 97, 0.2) 20%,
-    rgba(94, 96, 97, 0.5) 40%,
-    rgba(94, 96, 97, 0.7) 60%,
-    rgba(94, 96, 97, 0.85) 80%,
-    #5e6061 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(94, 96, 97, 0.2) 20%,
+      rgba(94, 96, 97, 0.5) 40%,
+      rgba(94, 96, 97, 0.7) 60%,
+      rgba(94, 96, 97, 0.85) 80%,
+      #5e6061 100%);
   pointer-events: none;
 }
 
@@ -278,11 +276,9 @@ h6 {
   background: white;
   border-radius: clamp(10px, 0.78vw, 15px);
   padding: clamp(2px, 0.16vw, 3px);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 203, 30, 1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 203, 30, 1) 100%);
 }
 
 .project-feature-card-inner {
@@ -332,8 +328,7 @@ h6 {
 
 /* Адаптивные отступы */
 .project-description-banner-padding {
-  padding: clamp(32px, 3.28vw, 63px) clamp(20px, 9.17vw, 176px)
-    clamp(140px, 15.1vw, 290px);
+  padding: clamp(32px, 3.28vw, 63px) clamp(20px, 9.17vw, 176px) clamp(140px, 15.1vw, 290px);
 }
 
 .project-description-cards-wrapper {
@@ -2034,5 +2029,430 @@ h6 {
 
   .project-faq-answer-text {
     font-size: 26px;
+  }
+}
+
+/* About Hero Section - стили для блока о компании */
+.about-hero-section {
+  position: relative;
+  width: 100%;
+  height: clamp(590px, 64.58vw, 1240px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.about-hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero-earth {
+  position: absolute;
+  top: clamp(200px, 20.83vw, 400px);
+  left: 0;
+  width: 100%;
+  height: 1080px;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+  padding-left: clamp(20px, 3.38vw, 64.9px);
+}
+
+.about-hero-earth-image {
+  width: 100%;
+  max-width: 1814px;
+  height: auto;
+  object-fit: contain;
+}
+
+.about-hero-text-top {
+  position: relative;
+  z-index: 10;
+  min-height: 180px;
+  padding: clamp(30px, 4.17vw, 80px) clamp(20px, 16.22vw, 311.51px) 0;
+}
+
+.about-hero-text {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: clamp(20px, 1.875vw, 36px);
+  line-height: 1.2177031834920247em;
+  text-align: center;
+  color: #ffffff;
+  max-width: 1299px;
+  margin: 0 auto;
+}
+
+.about-hero-bottom-white {
+  position: absolute;
+  top: clamp(650px, 60.42vw, 1160px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about-hero-bottom-white-card {
+  width: 100%;
+  max-width: none;
+  background: #ffffff;
+  border-radius: 60px 60px 0 0;
+  padding: clamp(40px, 5.21vw, 100px) clamp(20px, 23.65vw, 454px);
+  margin: 0;
+}
+
+.about-hero-bottom-text-white {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.22;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #404040;
+  max-width: 1013px;
+  margin: 0;
+}
+
+.about-hero-button {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.22;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  transition: background-color 0.2s;
+  padding: 15px 25px;
+  border-radius: 15px;
+}
+
+/* Мобильная версия (до 480px) */
+@media (max-width: 480px) {
+  .about-hero-section {
+    height: 560px;
+  }
+
+  .about-hero-background {
+    height: 560px;
+  }
+
+  .about-hero-earth {
+    top: 90px;
+    height: 600px;
+  }
+
+  .about-hero-text-top {
+    min-height: 150px;
+    padding: 30px 20px 0;
+  }
+
+  .about-hero-text {
+    font-size: 18px;
+  }
+
+  .about-hero-bottom-white {
+    position: absolute;
+    top: 360px;
+  }
+
+  .about-hero-bottom-white-card {
+    padding: 40px 20px 50px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .about-hero-bottom-text-white {
+    font-size: 18px;
+  }
+
+  .about-hero-button {
+    font-size: 18px;
+    padding: 8.5px 15px;
+    border-radius: 10px;
+  }
+}
+
+/* Планшеты (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .about-hero-section {
+    height: 770px;
+  }
+
+  .about-hero-background {
+    height: 770px;
+  }
+
+  .about-hero-earth {
+    top: 230px;
+    height: 700px;
+  }
+
+  .about-hero-text-top {
+    min-height: 180px;
+    padding: 50px 30px 0;
+  }
+
+  .about-hero-text {
+    font-size: clamp(20px, 3vw, 24px);
+  }
+
+  .about-hero-bottom-white {
+    position: absolute;
+    top: 540px;
+  }
+
+  .about-hero-bottom-white-card {
+    padding: 60px 40px;
+    border-radius: 40px 40px 0 0;
+  }
+
+  .about-hero-bottom-text-white {
+    font-size: 21px;
+  }
+
+  .about-hero-button {
+    font-size: 21px;
+    padding: 15px 25px;
+  }
+}
+
+/* Средние планшеты (769px - 1036px) */
+@media (min-width: 769px) and (max-width: 1036px) {
+
+  .about-hero-section {
+    height: 930px;
+  }
+
+  .about-hero-background {
+    height: 930px;
+  }
+
+  .about-hero-earth {
+    top: 270px;
+    height: 850px;
+  }
+
+  .about-hero-text-top {
+    min-height: 180px;
+    padding: 60px clamp(40px, 8vw, 100px) 0;
+  }
+
+  .about-hero-text {
+    font-size: clamp(24px, 3vw, 28px);
+  }
+
+  .about-hero-bottom-white {
+    position: absolute;
+    top: 640px;
+  }
+
+  .about-hero-bottom-white-card {
+    padding: 80px clamp(60px, 12vw, 200px);
+    border-radius: 50px 50px 0 0;
+  }
+
+  .about-hero-bottom-text-white {
+    font-size: 30px;
+  }
+
+  .about-hero-button {
+    font-size: 30px;
+    padding: 15px 25px;
+  }
+}
+
+/* Большие планшеты/маленькие десктопы (1037px - 1366px) */
+@media (min-width: 1037px) and (max-width: 1366px) {
+
+  .about-hero-section {
+    height: 1090px;
+  }
+
+  .about-hero-background {
+    height: 1090px;
+  }
+
+  .about-hero-earth {
+    top: 290px;
+    height: 950px;
+  }
+
+  .about-hero-text-top {
+    min-height: 180px;
+    padding: 70px clamp(100px, 15vw, 200px) 0;
+  }
+
+  .about-hero-text {
+    font-size: clamp(28px, 2.5vw, 32px);
+  }
+
+  .about-hero-bottom-white {
+    position: absolute;
+    top: 740px;
+  }
+
+  .about-hero-bottom-white-card {
+    padding: 90px clamp(150px, 25vw, 300px);
+    border-radius: 55px 55px 0 0;
+  }
+
+  .about-hero-bottom-text-white {
+    font-size: 30px;
+  }
+
+  .about-hero-button {
+    font-size: 30px;
+    padding: 15px 25px;
+  }
+}
+
+/* Десктопы (1367px - 1920px) */
+@media (min-width: 1367px) and (max-width: 1920px) {
+
+  .about-hero-section {
+    height: clamp(1220px, 69.27vw, 1330px);
+  }
+
+  .about-hero-background {
+    height: 100%;
+  }
+
+  .about-hero-earth {
+    top: clamp(340px, 22.40vw, 430px);
+    height: 1080px;
+  }
+
+  .about-hero-text-top {
+    min-height: 180px;
+    padding: clamp(60px, 4.17vw, 80px) clamp(200px, 16.22vw, 311.51px) 0;
+  }
+
+  .about-hero-text {
+    font-size: 36px;
+  }
+
+  .about-hero-bottom-white {
+    position: absolute;
+    top: clamp(860px, 53.13vw, 1020px);
+  }
+
+  .about-hero-bottom-white-card {
+    padding: 80px clamp(200px, 16.22vw, 311.51px) 100px;
+    border-radius: 60px 60px 0 0;
+  }
+
+  .about-hero-bottom-text-white {
+    font-size: 36px;
+  }
+
+  .about-hero-button {
+    font-size: 36px;
+    padding: 15px 25px;
+  }
+}
+
+/* Большие десктопы (1921px - 2560px) */
+@media (min-width: 1921px) and (max-width: 2560px) {
+
+  .about-hero-section {
+    height: 1300px;
+  }
+
+  .about-hero-background {
+    height: 1300px;
+  }
+
+  .about-hero-earth {
+    top: 440px;
+    height: 1100px;
+  }
+
+  .about-hero-text-top {
+    min-height: 180px;
+    padding: 80px clamp(311.51px, 12.16vw, 400px) 0;
+  }
+
+  .about-hero-text {
+    font-size: clamp(36px, 1.5vw, 40px);
+  }
+
+  .about-hero-bottom-white {
+    position: absolute;
+    top: 980px;
+  }
+
+  .about-hero-bottom-white-card {
+    padding: 100px clamp(454px, 17.73vw, 600px);
+    border-radius: 60px 60px 0 0;
+  }
+
+  .about-hero-bottom-text-white {
+    font-size: 36px;
+  }
+
+  .about-hero-button {
+    font-size: 38px;
+    padding: 15px 25px;
+  }
+}
+
+/* Очень большие экраны (> 2560px) */
+@media (min-width: 2561px) {
+
+  .about-hero-section {
+    height: 1400px;
+  }
+
+  .about-hero-background {
+    height: 1400px;
+  }
+
+  .about-hero-earth {
+    top: 480px;
+    height: 1200px;
+  }
+
+  .about-hero-text-top {
+    min-height: 180px;
+    padding: 80px 400px 0;
+  }
+
+  .about-hero-text {
+    font-size: 40px;
+  }
+
+  .about-hero-bottom-white {
+    position: absolute;
+    top: 1070px;
+  }
+
+  .about-hero-bottom-white-card {
+    padding: 100px 600px;
+    border-radius: 60px 60px 0 0;
+  }
+
+  .about-hero-bottom-text-white {
+    font-size: 36px;
+  }
+
+  .about-hero-button {
+    font-size: 40px;
   }
 }

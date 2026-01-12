@@ -5,6 +5,7 @@ import { ProjectNotFound } from "./ProjectNotFound";
 import { ProjectFooter } from "./ProjectFooter";
 import { ProjectFAQSection } from "./ProjectFAQSection";
 import { Navbar } from "@/shared/ui/navbar";
+import { ProjectAboutSection } from "./ProjectAboutSection";
 import { useProjectDetail } from "../model";
 import headerBg from "@/shared/assets/images/projects/yellow-orange-gradient.png?format=webp";
 
@@ -46,6 +47,9 @@ export function ProjectDetail() {
           bannerBackgroundImage={headerBg}
         />
       )}
+
+      {/* Блок About Hero */}
+      <ProjectAboutSection />
 
       {/* Футер */}
       <ProjectFooter backgroundColor={project.footerBackgroundColor} />

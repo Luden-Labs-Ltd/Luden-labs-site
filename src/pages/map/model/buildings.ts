@@ -1,13 +1,13 @@
-import building1 from "@assets/images/map/buildings/building1.webp";
-import building2 from "@assets/images/map/buildings/building2.webp";
-import building3 from "@assets/images/map/buildings/building3.webp";
-import building4 from "@assets/images/map/buildings/building4.webp";
-import building5 from "@assets/images/map/buildings/building5.webp";
-import building6 from "@assets/images/map/buildings/building6.webp";
-import building7 from "@assets/images/map/buildings/building7.webp";
-import building8 from "@assets/images/map/buildings/building8.webp";
-import building9 from "@assets/images/map/buildings/building9.webp";
-import building10 from "@assets/images/map/buildings/building10.webp";
+import building1 from "@assets/images/pages/map/buildings/building1.webp";
+import building2 from "@assets/images/pages/map/buildings/building2.webp";
+import building3 from "@assets/images/pages/map/buildings/building3.webp";
+import building4 from "@assets/images/pages/map/buildings/building4.webp";
+import building5 from "@assets/images/pages/map/buildings/building5.webp";
+import building6 from "@assets/images/pages/map/buildings/building6.webp";
+import building7 from "@assets/images/pages/map/buildings/building7.webp";
+import building8 from "@assets/images/pages/map/buildings/building8.webp";
+import building9 from "@assets/images/pages/map/buildings/building9.webp";
+import building10 from "@assets/images/pages/map/buildings/building10.webp";
 
 {
   /* ui buildings' data and reference to id of the real project */

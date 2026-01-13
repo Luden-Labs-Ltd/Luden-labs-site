@@ -36,7 +36,7 @@ export function ProjectHeader({
         y: 0,
       }}
       className={clsx(
-        "project-header-banner w-full",
+        "w-full h-[clamp(106px,22vh,300px)] min-h-[clamp(106px,22vh,300px)] flex items-center justify-center",
         !backgroundImage && `bg-gradient-to-r ${gradientFrom} ${gradientTo}`,
         "relative overflow-hidden",
         className,
@@ -44,13 +44,7 @@ export function ProjectHeader({
       style={backgroundStyle}
     >
       <div className='relative z-10 mx-auto flex h-full w-full max-w-[1920px] items-center justify-center px-4 md:px-8 lg:px-12'>
-        <h1
-          className='project-header-title text-center leading-[100%] tracking-[0%] text-white uppercase'
-          style={{
-            fontFamily: "'Days One', sans-serif",
-            fontWeight: 400,
-          }}
-        >
+        <h1 className='font-days-one font-normal text-[clamp(45px,12vw,196px)] whitespace-nowrap inline-block max-w-full text-center leading-[100%] tracking-[0%] text-white uppercase'>
           {title}
         </h1>
       </div>

@@ -1,3 +1,7 @@
+import howToPlay1 from "@/shared/assets/images/pages/projects/how-to-play/how-to-play-1.png?format=webp";
+import howToPlay2 from "@/shared/assets/images/pages/projects/how-to-play/how-to-play-2.png?format=webp";
+import howToPlay3 from "@/shared/assets/images/pages/projects/how-to-play/how-to-play-3.png?format=webp";
+
 export interface ProjectDetailData {
   title: string;
   gradientFrom: string;
@@ -12,9 +16,22 @@ export interface ProjectDetailData {
     title: string;
     description: string;
   }>;
+  howToPlay?: Array<{
+    image?: string;
+    text: string;
+  }>;
+  specialFeatures?: Array<{
+    icon?: string;
+    title: string;
+  }>;
   faq?: Array<{
     question: string;
     answer: string;
+  }>;
+  targetAudience?: Array<{
+    icon?: "hands" | "puzzle" | "group" | "check";
+    text: string;
+    gradient?: string;
   }>;
 }
 
@@ -55,6 +72,42 @@ export const projectDetailData: Record<string, ProjectDetailData> = {
           "Подходит для игроков всех возрастов, что делает его идеальным для семейных игровых вечеров, учебных занятий и многого другого.",
       },
     ],
+    howToPlay: [
+      {
+        image: howToPlay2,
+        text: "Каждый игрок тянет карту, с изображением важного исторического события.",
+      },
+      {
+        image: howToPlay3,
+        text: "Игрок с самым ранним событием побеждает в раунде.",
+      },
+      {
+        image: howToPlay1,
+        text: "Если два игрока вытягивают карты с одним и тем же событием, они переходят в «Режим войны». Каждый кладёт три карты рубашкой вверх и четвёртую лицом вверх. Игрок с самым ранним событием на четвёртой карте выигрывает все карты в игре.",
+      },
+    ],
+    specialFeatures: [
+      {
+        title:
+          "Геймификация: помощь ощущается как квест, а не как обязанность.",
+      },
+      {
+        title:
+          "Командная динамика: участники чувствуют себя частью общего дела",
+      },
+      {
+        title:
+          "Простой доступ: все работает через удобное мобильное приложение",
+      },
+      {
+        title:
+          "Значимость: каждый шаг – это реальная поддержка семьи в трудный момент",
+      },
+      {
+        title:
+          "Умная навигация: система сама распределяет задачи и напоминает",
+      },
+    ],
     faq: [
       {
         question: "Как играть в карты?",
@@ -80,6 +133,24 @@ export const projectDetailData: Record<string, ProjectDetailData> = {
         question: "Есть ли еще похожие проекты?",
         answer:
           "Да, у нас есть несколько проектов в разработке. Следите за обновлениями на нашем сайте и в социальных сетях.",
+      },
+    ],
+    targetAudience: [
+      {
+        icon: "hands",
+        text: "Семьям, оказавшимся в кризисной ситуации.",
+      },
+      {
+        icon: "puzzle",
+        text: "Волонтёрам, готовым помогать, но не знающим с чего начать.",
+      },
+      {
+        icon: "group",
+        text: "Социальным службам, ищущим эффективный инструмент координации.",
+      },
+      {
+        icon: "check",
+        text: "Любому, кто хочет быть полезным – и получить от этого радость.",
       },
     ],
   },

@@ -33,18 +33,18 @@ export function ProjectDescriptionSection({
       transition={{
         delay: 0.2,
       }}
-      className={clsx("project-description-section bg-white", className)}
+      className={clsx("bg-white", className)}
     >
       {/* Заголовок */}
       <div className='mx-auto max-w-[1920px] px-4 pt-12 pb-8 md:px-8 md:pt-16 md:pb-10 lg:px-12 lg:pt-20 lg:pb-12'>
-        <h2 className='project-description-title text-center uppercase'>
+        <h2 className='font-days-one font-normal text-[clamp(32px,3.9vw,75px)] text-[#5e6061] leading-[1.273] text-center uppercase'>
           {title}
         </h2>
       </div>
 
       {/* Желтый баннер с текстом */}
       <div
-        className='project-description-banner relative'
+        className='relative overflow-hidden'
         style={
           bannerBackgroundImage
             ? {
@@ -59,8 +59,8 @@ export function ProjectDescriptionSection({
       >
         {/* Текст в верхней части баннера */}
         {bannerText && (
-          <div className='project-description-banner-padding w-full'>
-            <p className='project-description-banner-text text-center uppercase'>
+          <div className='w-full p-[clamp(32px,3.28vw,63px)] px-[clamp(20px,9.17vw,176px)] pb-[clamp(140px,15.1vw,290px)]'>
+            <p className='font-days-one font-normal text-[clamp(16px,1.67vw,32px)] leading-[1.273] text-white text-center max-w-[clamp(900px,81.7vw,1568px)] mx-auto uppercase'>
               {bannerText}
             </p>
           </div>
@@ -69,8 +69,8 @@ export function ProjectDescriptionSection({
 
       {/* Карточки (наполовину на желтом фоне, наполовину на белом) */}
       {features && features.length > 0 && (
-        <div className='project-description-cards-wrapper relative z-10 mx-auto max-w-[1920px]'>
-          <div className='grid grid-cols-1 gap-[clamp(20px,_1.98vw,_38px)] sm:grid-cols-3'>
+        <div className='relative z-10 mx-auto max-w-[1920px] px-[clamp(16px,5.21vw,100px)] pb-[clamp(30px,3.13vw,60px)] mt-0 md:-mt-[100px] lg:-mt-[120px] xl:-mt-[150px] 2xl:-mt-[190px] max-md:mt-0'>
+          <div className='grid grid-cols-1 gap-[clamp(20px,1.98vw,38px)] sm:grid-cols-3'>
             {features.map((feature, index) => (
               <motion.div
                 key={feature.number}
@@ -85,23 +85,23 @@ export function ProjectDescriptionSection({
                 transition={{
                   delay: 0.4 + index * 0.1,
                 }}
-                className='project-feature-card relative'
+                className='relative'
               >
                 {/* Большой номер в левом верхнем углу, частично перекрывает карточку */}
-                <div className='project-feature-number-wrapper'>
-                  <span className='project-feature-number'>
+                <div className='absolute z-10 left-[10px] top-[-5px] md:left-[-10px] md:top-[-10px] lg:left-[-12px] lg:top-[-25px] xl:left-[-15px] xl:top-[-35px] 2xl:left-[-20px] 2xl:top-[-45px]'>
+                  <span className='font-montserrat font-semibold text-[90px] md:text-[clamp(90px,9.77vw,75px)] lg:text-[clamp(75px,9.65vw,100px)] xl:text-[clamp(100px,11.7vw,160px)] 2xl:text-[clamp(160px,10.42vw,200px)] leading-[1.219] text-[#8c8c8c] select-none pointer-events-none'>
                     {feature.number}
                   </span>
                 </div>
 
                 {/* Карточка с градиентным бордером */}
-                <div className='project-feature-card-border h-full'>
-                  <div className='project-feature-card-inner flex h-full flex-col'>
-                    <div className='project-feature-content-padding flex flex-1 flex-col'>
-                      <h3 className='project-feature-title project-feature-title-margin uppercase'>
+                <div className='relative h-full rounded-[clamp(10px,0.78vw,15px)] p-[clamp(2px,0.16vw,3px)] bg-gradient-to-b from-transparent to-[rgba(255,203,30,1)]'>
+                  <div className='flex h-full min-h-[clamp(280px,19.84vw,381px)] flex-col bg-white rounded-[clamp(8px,0.625vw,12px)] p-[clamp(24px,2.45vw,47px)] px-[clamp(16px,1.61vw,31px)]'>
+                    <div className='flex flex-1 flex-col pl-[clamp(40px,4.84vw,93px)]'>
+                      <h3 className='font-days-one font-normal text-[clamp(18px,1.88vw,36px)] leading-[1.273] text-[#5e6061] mb-[clamp(20px,2.45vw,47px)] uppercase'>
                         {feature.title}
                       </h3>
-                      <p className='project-feature-description'>
+                      <p className='font-days-one font-normal text-[clamp(14px,1.35vw,26px)] leading-[1.273] text-[#5e6061]'>
                         {feature.description}
                       </p>
                     </div>

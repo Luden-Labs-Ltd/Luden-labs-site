@@ -44,7 +44,7 @@ export function Popover({ currentProject, onClick, onVisited }: Props) {
   };
 
   return (
-    <Card className='absolute bottom-[20%] left-12 max-w-104 w-[50%]'>
+    <Card className='absolute bottom-[20%] left-12 w-[50%] max-w-104'>
       <section className='flex w-full flex-col'>
         <section className='flex items-center justify-between'>
           {/* label */}

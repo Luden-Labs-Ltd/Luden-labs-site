@@ -44,9 +44,8 @@ export function Popover({ currentProject, onClick, onVisited }: Props) {
   };
 
   return (
-    <Card className='absolute bottom-10 left-12 w-104'>
+    <Card className='absolute bottom-[20%] left-12 max-w-104 w-[50%]'>
       <section className='flex w-full flex-col'>
-        {/* top section */}
         <section className='flex items-center justify-between'>
           {/* label */}
           <span className='flex h-6 items-center rounded-full bg-red-500 px-4.5 text-xs text-white'>
@@ -59,7 +58,7 @@ export function Popover({ currentProject, onClick, onVisited }: Props) {
         </section>
 
         {/* Image section */}
-        <section className='mt-4 aspect-video h-[200px] overflow-hidden rounded-2xl bg-black'>
+        <section className='mt-4 aspect-video max-h-[200px] overflow-hidden rounded-2xl bg-black'>
           {/* Image */}
           <img
             src='https://img.freepik.com/premium-vector/city-street-small-town-walk-building-people-walking-abstract-concept-graphic-design_133260-4131.jpg'

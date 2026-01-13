@@ -8,53 +8,38 @@ import { Popover } from "./Popover";
 import { getVisitedOpacity } from "../lib/utils/getVisitedOpacity";
 
 export function Map() {
-  {
-    /* current opacity state from local storage, sets current map's opacity */
-  }
   const [opacity, setOpacity] = useState(getVisitedOpacity);
 
-  {
-    /* current project's id state, opens popover and helps get project's info */
-  }
   const [currentProjectId, setCurrentProjectId] = useState<number | null>(null);
 
-  {
-    /* computed value, getting current project by id */
-  }
   const currentProject = useMemo(() => {
     if (currentProjectId == null) return null;
 
     return projectsData[currentProjectId] ?? null;
   }, [currentProjectId]);
 
-  {
-    /* function onClick for "X" button on popover */
-  }
   const onClose = () => {
     setCurrentProjectId(null);
   };
 
-  {
-    /* function onClick for 'Узнать больше' button. It rerenders ui up to date with local storage */
-  }
   const onVisited = () => {
     setOpacity(getVisitedOpacity());
   };
 
   return (
-    <div className='relative min-h-screen w-full overflow-hidden'>
+    <div className='relative w-full max-w-[1920px] aspect-[16/9] bg-white mx-auto overflow-hidden'>
       {/* uncolored map */}
       <img
         src={uncoloredMap}
         alt=''
-        className='absolute inset-0 h-full w-full object-cover'
+        className='absolute inset-0 h-full w-full object-cover object-center'
       />
 
       {/* colored map */}
       <img
         src={coloredMap}
         alt=''
-        className='absolute inset-0 h-full w-full object-cover'
+        className='absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000'
         style={{ opacity: opacity }}
       />
 
@@ -65,12 +50,12 @@ export function Map() {
           src={building.src}
           x={building.x}
           y={building.y}
-          onClick={() => setCurrentProjectId(building.projectId ?? null)}
+          onClick={() => setCurrentProjectId(building.projectId)}
         />
       ))}
 
       {/* Popover */}
-      {currentProjectId !== null && (
+      {!!currentProjectId && (
         <Popover
           currentProject={currentProject!}
           onClick={onClose}

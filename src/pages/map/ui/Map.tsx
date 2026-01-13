@@ -1,11 +1,11 @@
-import uncoloredMap from "@assets/images/map/uncoloredMap.webp";
+import { projectsData } from "@/entities/project";
 import coloredMap from "@assets/images/map/coloredMap.webp";
+import uncoloredMap from "@assets/images/map/uncoloredMap.webp";
+import { useMemo, useState } from "react";
+import { getVisitedOpacity } from "../lib/utils/getVisitedOpacity";
 import { mapBuildings } from "../model";
 import { Building } from "./Building";
-import { useMemo, useState } from "react";
-import { projectsData } from "@/entities/project";
 import { Popover } from "./Popover";
-import { getVisitedOpacity } from "../lib/utils/getVisitedOpacity";
 
 export function Map() {
   const [opacity, setOpacity] = useState(getVisitedOpacity);
@@ -27,7 +27,7 @@ export function Map() {
   };
 
   return (
-    <div className='relative mx-auto aspect-[16/9] w-full max-w-[1920px] overflow-hidden bg-white'>
+    <div className='relative aspect-2048/905 max-w-full max-h-screen overflow-hidden bg-white'>
       {/* uncolored map */}
       <img
         src={uncoloredMap}

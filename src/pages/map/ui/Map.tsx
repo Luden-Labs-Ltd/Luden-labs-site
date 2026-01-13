@@ -1,6 +1,6 @@
 import { projectsData } from "@/entities/project";
-import coloredMap from "@assets/images/map/coloredMap.webp";
-import uncoloredMap from "@assets/images/map/uncoloredMap.webp";
+import coloredMap from "@assets/images/pages/map/coloredMap.webp";
+import uncoloredMap from "@assets/images/pages/map/uncoloredMap.webp";
 import { useMemo, useState } from "react";
 import { getVisitedOpacity } from "../lib/utils/getVisitedOpacity";
 import { mapBuildings } from "../model";

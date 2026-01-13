@@ -57,10 +57,10 @@ export function ProjectTargetAudienceSection({
       }}
       className={clsx("bg-white py-[clamp(40px,4vw,60px)]", className)}
     >
-      <div className="mx-auto max-w-[1920px] px-[clamp(16px,2vw,24px)]">
+      <div className='mx-auto max-w-[1920px] px-[clamp(16px,2vw,24px)]'>
         {/* Заголовок */}
-        <div className="mb-[clamp(30px,3vw,40px)]">
-          <h2 className="font-sans font-bold text-[clamp(32px,3vw,48px)] leading-[1.2] text-[#333] text-left uppercase">
+        <div className='mb-[clamp(30px,3vw,40px)]'>
+          <h2 className='text-left font-sans text-[clamp(32px,3vw,48px)] leading-[1.2] font-bold text-[#333] uppercase'>
             {title}
           </h2>
         </div>
@@ -71,11 +71,12 @@ export function ProjectTargetAudienceSection({
             "grid gap-[clamp(20px,2vw,30px)]",
             isFourCards
               ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 [&>:nth-child(4)]:col-span-1 sm:[&>:nth-child(4)]:col-span-2 lg:[&>:nth-child(4)]:col-span-1 lg:[&>:nth-child(4)]:col-start-2"
-              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
           )}
         >
           {cards.map((card, index) => {
-            const gradient = card.gradient || gradients[index % gradients.length];
+            const gradient =
+              card.gradient || gradients[index % gradients.length];
 
             return (
               <motion.div
@@ -91,20 +92,20 @@ export function ProjectTargetAudienceSection({
                 transition={{
                   delay: 0.4 + index * 0.1,
                 }}
-                className="project-target-audience-card relative rounded-[clamp(12px,1.5vw,20px)] p-[clamp(24px,3vw,40px)] min-h-[clamp(180px,20vw,240px)] flex items-center overflow-hidden"
+                className='project-target-audience-card relative flex min-h-[clamp(180px,20vw,240px)] items-center overflow-hidden rounded-[clamp(12px,1.5vw,20px)] p-[clamp(24px,3vw,40px)]'
                 style={{
                   backgroundImage: `url(${gradient})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
               >
-                <div className="flex items-center gap-[clamp(16px,2vw,24px)] w-full z-[1] max-sm:flex-col max-sm:text-center">
-                  <div className="flex-shrink-0 flex items-center justify-center">
+                <div className='z-[1] flex w-full items-center gap-[clamp(16px,2vw,24px)] max-sm:flex-col max-sm:text-center'>
+                  <div className='flex flex-shrink-0 items-center justify-center'>
                     {typeof card.icon === "string"
                       ? iconMap[card.icon as keyof typeof iconMap]
                       : card.icon}
                   </div>
-                  <p className="font-sans font-medium text-[clamp(16px,1.8vw,22px)] leading-[1.4] text-white m-0">
+                  <p className='m-0 font-sans text-[clamp(16px,1.8vw,22px)] leading-[1.4] font-medium text-white'>
                     {card.text}
                   </p>
                 </div>

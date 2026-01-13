@@ -44,7 +44,7 @@ export function ProjectHeader({
       style={backgroundStyle}
     >
       <div className='relative z-10 mx-auto flex h-full w-full max-w-[1920px] items-center justify-center px-4 md:px-8 lg:px-12'>
-        <h1 className='font-days-one inline-block max-w-full text-center text-[clamp(28px,12vw,196px)] leading-[100%] font-normal tracking-[0%] whitespace-nowrap text-white uppercase'>
+        <h1 className='font-days-one inline-block max-w-full text-center text-[clamp(20px,10vw,196px)] leading-[100%] font-normal tracking-[0%] text-white uppercase max-sm:whitespace-normal sm:whitespace-nowrap'>
           {title}
         </h1>
       </div>

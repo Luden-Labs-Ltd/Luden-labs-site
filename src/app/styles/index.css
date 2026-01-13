@@ -64,6 +64,7 @@
   --animate-spin-slow: spin 8s linear infinite;
 
   @keyframes float {
+
     0%,
     100% {
       transform: translateY(0px);
@@ -88,6 +89,15 @@ h6 {
   font-family: var(--font-family-display);
 }
 
+/* Custom font utility classes */
+.font-days-one {
+  font-family: var(--font-days-one);
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
 /* Project Content Border - градиентный бордер (сверху нет, снизу четкий, по бокам плавно исчезает) */
 /* Оставляем псевдоэлементы для градиентных бордеров, так как это сложно реализовать в Tailwind */
 .project-content-border::before {
@@ -97,15 +107,13 @@ h6 {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(94, 96, 97, 0.2) 20%,
-    rgba(94, 96, 97, 0.5) 40%,
-    rgba(94, 96, 97, 0.7) 60%,
-    rgba(94, 96, 97, 0.85) 80%,
-    #5e6061 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(94, 96, 97, 0.2) 20%,
+      rgba(94, 96, 97, 0.5) 40%,
+      rgba(94, 96, 97, 0.7) 60%,
+      rgba(94, 96, 97, 0.85) 80%,
+      #5e6061 100%);
   pointer-events: none;
 }
 
@@ -116,15 +124,13 @@ h6 {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(94, 96, 97, 0.2) 20%,
-    rgba(94, 96, 97, 0.5) 40%,
-    rgba(94, 96, 97, 0.7) 60%,
-    rgba(94, 96, 97, 0.85) 80%,
-    #5e6061 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(94, 96, 97, 0.2) 20%,
+      rgba(94, 96, 97, 0.5) 40%,
+      rgba(94, 96, 97, 0.7) 60%,
+      rgba(94, 96, 97, 0.85) 80%,
+      #5e6061 100%);
   pointer-events: none;
 }
 
@@ -137,10 +143,8 @@ h6 {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(0, 0, 0, 0.1) 100%);
   pointer-events: none;
 }

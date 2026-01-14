@@ -34,7 +34,7 @@ export function Building({ src, alt = "", x, y, onClick }: BuildingProps) {
         onClick={onClick}
         onMouseEnter={mouseOn}
         onMouseLeave={mouseOut}
-        className={`absolute bg-red-500 z-100 flex aspect-square w-30 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full`}
+        className={`absolute z-100 flex aspect-square w-30 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-red-500`}
         style={{ left: `${x}%`, top: `${y}%` }}
       ></button>
     </div>

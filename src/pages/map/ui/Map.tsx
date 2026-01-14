@@ -27,7 +27,7 @@ export function Map() {
   };
 
   return (
-    <div className='relative w-full max-w-[1920px] aspect-[16/9] mx-auto'>
+    <div className='relative mx-auto aspect-[16/9] w-full max-w-[1920px]'>
       {/* uncolored map */}
       <img
         src={uncoloredMap}

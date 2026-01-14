@@ -7,3 +7,6 @@ export { ProjectFeatureCard } from "./ProjectFeatureCard";
 export { ProjectFooter } from "./ProjectFooter";
 export { ProjectNotFound } from "./ProjectNotFound";
 export { ProjectFAQSection } from "./ProjectFAQSection";
+export { ProjectHowToPlaySection } from "./ProjectHowToPlaySection";
+export { ProjectSpecialFeaturesSection } from "./ProjectSpecialFeaturesSection";
+export { ProjectTargetAudienceSection } from "./ProjectTargetAudienceSection";

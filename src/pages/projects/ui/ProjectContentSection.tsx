@@ -33,7 +33,7 @@ export function ProjectContentSection({
         className,
       )}
     >
-      <div className='project-content-border overflow-hidden rounded-[30px] bg-white p-8 md:p-10 lg:p-12 xl:p-16'>
+      <div className='project-content-border relative overflow-hidden rounded-[30px] border-t-0 border-b-[3px] border-b-[#5e6061] bg-white p-8 md:p-10 lg:p-12 xl:p-16'>
         <div className='grid grid-cols-1 items-start gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12'>
           {/* Текстовая часть */}
           <div className='space-y-5 text-left text-gray-900'>{children}</div>

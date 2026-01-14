@@ -19,3 +19,19 @@ declare module "*.jpeg?format=webp" {
   const src: string;
   export default src;
 }
+
+// Images with additional parameters
+declare module "*.png?*&format=webp" {
+  const src: string;
+  export default src;
+}
+
+declare module "*.jpg?*&format=webp" {
+  const src: string;
+  export default src;
+}
+
+declare module "*.jpeg?*&format=webp" {
+  const src: string;
+  export default src;
+}

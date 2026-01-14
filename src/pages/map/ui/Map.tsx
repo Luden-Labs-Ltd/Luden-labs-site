@@ -27,7 +27,7 @@ export function Map() {
   };
 
   return (
-    <div className='relative aspect-2048/905 max-h-screen max-w-full overflow-hidden bg-white'>
+    <div className='relative w-full max-w-[1920px] aspect-[16/9] mx-auto'>
       {/* uncolored map */}
       <img
         src={uncoloredMap}

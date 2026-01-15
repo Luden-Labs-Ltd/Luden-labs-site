@@ -6,13 +6,14 @@ import headerBg from "@/shared/assets/images/pages/projects/gradients/yellow-ora
 
 export const ludenCardsAssets = {
   // Главное изображение
-  mainImage: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=800&h=600&fit=crop",
-  
+  mainImage:
+    "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=800&h=600&fit=crop",
+
   // Изображения для секции "Как играть"
   howToPlay1,
   howToPlay2,
   howToPlay3,
-  
+
   // Фоновое изображение заголовка
   headerBg,
 } as const;

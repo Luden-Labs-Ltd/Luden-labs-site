@@ -61,10 +61,12 @@ export function ProjectHowToPlaySection({
               {/* Рамка с hover эффектом */}
               <div
                 className='group/card relative h-full overflow-hidden rounded-[15px] border-2 bg-white transition-colors hover:bg-[var(--border-color)]'
-                style={{
-                  borderColor: borderColor || "#ffda5e",
-                  "--border-color": borderColor || "#ffda5e",
-                } as React.CSSProperties & { "--border-color": string }}
+                style={
+                  {
+                    borderColor: borderColor || "#ffda5e",
+                    "--border-color": borderColor || "#ffda5e",
+                  } as React.CSSProperties & { "--border-color": string }
+                }
               >
                 <div className='flex h-full min-h-[clamp(300px,25vw,480px)] flex-col bg-transparent'>
                   {/* Изображение */}

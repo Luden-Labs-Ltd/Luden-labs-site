@@ -38,7 +38,8 @@ const resolveTheme = (data: ProjectConfigData): ProjectConfigData => {
   const backgroundColor = data.theme.footer.backgroundColor;
   const normalizedColor = backgroundColor?.toLowerCase();
   const colorScheme =
-    data.theme.colorScheme || (normalizedColor && schemeByColor[normalizedColor]);
+    data.theme.colorScheme ||
+    (normalizedColor && schemeByColor[normalizedColor]);
 
   if (!colorScheme) {
     return data;
@@ -116,14 +117,14 @@ const retornoConfig: ProjectConfig = {
 export const PROJECT_CONFIGS = {
   "luden-cards": ludenCardsConfig,
   "historical-journey": historicalJourneyConfig,
-  "enola": enolaConfig,
+  enola: enolaConfig,
   "sos-band": sosBandConfig,
-  "tresor": tresorConfig,
-  "spork": sporkConfig,
-  "stygen": stygenConfig,
-  "pulson": pulsonConfig,
+  tresor: tresorConfig,
+  spork: sporkConfig,
+  stygen: stygenConfig,
+  pulson: pulsonConfig,
   "real-fishing": realFishingConfig,
-  "retorno": retornoConfig,
+  retorno: retornoConfig,
 } as const;
 
 // Типы
@@ -145,7 +146,12 @@ export function projectExists(projectId: string): projectId is ProjectId {
 }
 
 // Экспорт пресетов для использования в новых конфигах
-export { THEME_PRESETS, FONT_SIZES, COLORS, SECTION_TITLE_STYLE } from "./presets";
+export {
+  THEME_PRESETS,
+  FONT_SIZES,
+  COLORS,
+  SECTION_TITLE_STYLE,
+} from "./presets";
 
 // Экспорт типов
 export type { ProjectConfig, ProjectConfigData } from "../model/config.types";

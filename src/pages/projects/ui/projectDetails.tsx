@@ -30,7 +30,10 @@ export function ProjectDetail() {
       {/* Контентная секция */}
       <ProjectContentSection image={project.image} imageAlt={project.imageAlt}>
         {project.paragraphs.map((paragraph, index) => (
-          <p key={index} className='font-days-one font-normal text-[30px] leading-[100%] tracking-[0%] text-[#5e6061] text-left'>
+          <p
+            key={index}
+            className='font-days-one text-left text-[30px] leading-[100%] font-normal tracking-[0%] text-[#5e6061]'
+          >
             {paragraph}
           </p>
         ))}

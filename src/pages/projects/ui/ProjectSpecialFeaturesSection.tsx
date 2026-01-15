@@ -82,7 +82,12 @@ export function ProjectSpecialFeaturesSection({
               }}
               className='relative'
             >
-              <div className='relative h-full overflow-hidden rounded-[15px] border-2 border-(--accent-color) bg-white transition-colors hover:border-(--accent-color) hover:bg-(--accent-soft)'>
+              <div
+                className='relative h-full overflow-hidden rounded-[15px] border-2 bg-white transition-colors'
+                style={{
+                  borderColor: resolvedAccentColor,
+                }}
+              >
                 <div className='flex h-full min-h-[clamp(200px,18vw,345px)] flex-col items-center justify-center bg-transparent p-[clamp(24px,2.45vw,47px)] px-[clamp(16px,1.61vw,31px)] text-center'>
                   {/* Иконка */}
                   {feature.icon && (
@@ -104,7 +109,10 @@ export function ProjectSpecialFeaturesSection({
                           height={80}
                           className='mb-[15px]'
                         />
-                        <p className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal text-(--accent-color)'>
+                        <p
+                          className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal'
+                          style={{ color: resolvedAccentColor }}
+                        >
                           {feature.title}
                         </p>
                       </div>
@@ -115,7 +123,10 @@ export function ProjectSpecialFeaturesSection({
                           height={80}
                           className='mb-[15px]'
                         />
-                        <p className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal text-(--accent-color)'>
+                        <p
+                          className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal'
+                          style={{ color: resolvedAccentColor }}
+                        >
                           {feature.title}
                         </p>
                       </div>

@@ -5,6 +5,7 @@ interface ProjectDescriptionSectionProps {
   title?: string;
   bannerText?: string;
   bannerBackgroundImage?: string;
+  borderGradientColor?: string;
   features?: Array<{
     number: number;
     title: string;
@@ -18,6 +19,7 @@ export function ProjectDescriptionSection({
   title = "ОПИСАНИЕ",
   bannerText,
   bannerBackgroundImage,
+  borderGradientColor = "#fbbf24",
   features,
   children,
   className,
@@ -42,7 +44,7 @@ export function ProjectDescriptionSection({
         </h2>
       </div>
 
-      {/* Желтый баннер с текстом */}
+      {/* Баннер с текстом */}
       <div
         className='relative overflow-hidden'
         style={
@@ -53,7 +55,7 @@ export function ProjectDescriptionSection({
                 backgroundPosition: "center",
               }
             : {
-                background: "linear-gradient(to right, #fde68a, #fbbf24)",
+                background: `linear-gradient(to right, ${borderGradientColor}80, ${borderGradientColor})`,
               }
         }
       >
@@ -95,7 +97,12 @@ export function ProjectDescriptionSection({
                 </div>
 
                 {/* Карточка с градиентным бордером */}
-                <div className='relative h-full rounded-[clamp(10px,0.78vw,15px)] bg-gradient-to-b from-transparent to-[rgba(255,203,30,1)] p-[clamp(2px,0.16vw,3px)]'>
+                <div
+                  className='relative h-full rounded-[clamp(10px,0.78vw,15px)] p-[clamp(2px,0.16vw,3px)]'
+                  style={{
+                    background: `linear-gradient(to bottom, transparent, ${borderGradientColor})`,
+                  }}
+                >
                   <div className='flex h-full min-h-[clamp(280px,19.84vw,381px)] flex-col rounded-[clamp(8px,0.625vw,12px)] bg-white p-[clamp(24px,2.45vw,47px)] px-[clamp(16px,1.61vw,31px)]'>
                     <div className='flex flex-1 flex-col pl-[clamp(40px,4.84vw,93px)]'>
                       <h3 className='font-days-one mb-[clamp(20px,2.45vw,47px)] text-[clamp(18px,1.88vw,36px)] leading-[1.273] font-normal text-[#5e6061] uppercase'>

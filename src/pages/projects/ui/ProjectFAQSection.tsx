@@ -11,6 +11,7 @@ interface ProjectFAQSectionProps {
   title?: string;
   items: FAQItem[];
   bannerBackgroundImage?: string;
+  iconColor?: string;
   className?: string;
 }
 
@@ -18,6 +19,7 @@ export function ProjectFAQSection({
   title = "ВОПРОСЫ",
   items,
   bannerBackgroundImage,
+  iconColor = "#fbbf24",
   className,
 }: ProjectFAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -70,7 +72,12 @@ export function ProjectFAQSection({
             return (
               <div
                 key={index}
-                className='overflow-hidden rounded-[clamp(10px,0.78vw,15px)] bg-gradient-to-r from-[#fde68a] to-[#fbbf24]'
+                className='overflow-hidden rounded-[clamp(10px,0.78vw,15px)]'
+                style={{
+                  background: iconColor
+                    ? `linear-gradient(to right, ${iconColor}80, ${iconColor})`
+                    : "linear-gradient(to right, #fde68a, #fbbf24)",
+                }}
               >
                 <button
                   type='button'
@@ -81,8 +88,11 @@ export function ProjectFAQSection({
                   <span className='font-days-one flex-1 text-[clamp(16px,1.67vw,32px)] leading-[1.273] font-normal text-white'>
                     {item.question}
                   </span>
-                  <span className='relative flex h-[clamp(40px,4.17vw,80px)] min-h-[clamp(40px,4.17vw,80px)] w-[clamp(40px,4.17vw,80px)] min-w-[clamp(40px,4.17vw,80px)] flex-shrink-0 items-center justify-center rounded-full border-none bg-white'>
-                    <span className='absolute top-0 left-0 m-0 flex h-full w-full translate-y-[-2px] items-center justify-center p-0 font-sans text-[clamp(32px,3.33vw,64px)] leading-[1] font-normal text-[#fbbf24]'>
+                  <span className='relative flex h-[clamp(40px,4.17vw,80px)] min-h-[clamp(40px,4.17vw,80px)] w-[clamp(40px,4.17vw,80px)] min-w-[clamp(40px,4.17vw,80px)] shrink-0 items-center justify-center rounded-full border-none bg-white'>
+                    <span
+                      className='absolute top-0 left-0 m-0 flex h-full w-full translate-y-[-2px] items-center justify-center p-0 font-sans text-[clamp(32px,3.33vw,64px)] leading-none font-normal'
+                      style={{ color: iconColor }}
+                    >
                       {isOpen ? "−" : "+"}
                     </span>
                   </span>

@@ -120,6 +120,14 @@ export function ProjectRenderer({ config }: ProjectRendererProps) {
 
         const mappedFeatures = section.data.features.map((feature) => {
           if (feature.iconKey) {
+            if (reactIconKeys.includes(feature.iconKey)) {
+              return {
+                title: feature.title,
+                iconKey: feature.iconKey,
+                icon: undefined,
+              };
+            }
+
             const assetValue = config.assets[feature.iconKey];
 
             if (

@@ -14,6 +14,7 @@ import {
   QRCodeIcon,
   CertificateIcon,
   DonationIcon,
+  FamilyIcon,
 } from "@/shared/assets/icons/target-audience";
 import { COLOR_SCHEMES } from "@/entities/project";
 
@@ -28,6 +29,7 @@ interface TargetAudienceCard {
     | "qrcode"
     | "certificate"
     | "donation"
+    | "family"
     | React.ReactNode;
   text: string;
   gradient?: string;
@@ -54,6 +56,8 @@ const renderIcon = (iconKey: string, className?: string): React.ReactNode => {
       return <CertificateIcon width={80} height={80} {...iconProps} />;
     case "donation":
       return <DonationIcon width={80} height={80} {...iconProps} />;
+    case "family":
+      return <FamilyIcon width={80} height={80} {...iconProps} />;
     default:
       return null;
   }

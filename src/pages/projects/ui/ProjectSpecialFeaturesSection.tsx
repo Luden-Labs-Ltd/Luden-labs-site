@@ -10,14 +10,33 @@ interface SpecialFeature {
 interface ProjectSpecialFeaturesSectionProps {
   title?: string;
   features: SpecialFeature[];
+  accentColor?: string;
   className?: string;
 }
+
+const DEFAULT_ACCENT_COLOR = "#ff6b35";
+
+const hexToRgba = (hexColor: string, alpha: number) => {
+  const normalizedHex = hexColor.replace("#", "");
+  if (normalizedHex.length !== 6) {
+    return `rgba(255, 107, 53, ${alpha})`;
+  }
+
+  const r = parseInt(normalizedHex.slice(0, 2), 16);
+  const g = parseInt(normalizedHex.slice(2, 4), 16);
+  const b = parseInt(normalizedHex.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
 
 export function ProjectSpecialFeaturesSection({
   title = "ЧТО В ЭТОМ ОСОБЕННОГО?",
   features,
+  accentColor,
   className,
 }: ProjectSpecialFeaturesSectionProps) {
+  const resolvedAccentColor = accentColor || DEFAULT_ACCENT_COLOR;
+  const accentSoft = hexToRgba(resolvedAccentColor, 0.12);
+
   return (
     <motion.section
       initial={{
@@ -30,6 +49,12 @@ export function ProjectSpecialFeaturesSection({
         delay: 0.2,
       }}
       className={clsx("bg-white", className)}
+      style={
+        {
+          ["--accent-color" as string]: resolvedAccentColor,
+          ["--accent-soft" as string]: accentSoft,
+        } as React.CSSProperties
+      }
     >
       {/* Заголовок */}
       <div className='mx-auto max-w-[1920px] px-4 pt-12 pb-8 md:px-8 md:pt-16 md:pb-10 lg:px-12 lg:pt-20 lg:pb-12'>
@@ -57,7 +82,7 @@ export function ProjectSpecialFeaturesSection({
               }}
               className='relative'
             >
-              <div className='relative h-full overflow-hidden rounded-[15px] border-2 border-[#ff6b35] bg-white transition-colors hover:border-[#ff8c00] hover:bg-[#fff5e6]'>
+              <div className='relative h-full overflow-hidden rounded-[15px] border-2 border-(--accent-color) bg-white transition-colors hover:border-(--accent-color) hover:bg-(--accent-soft)'>
                 <div className='flex h-full min-h-[clamp(200px,18vw,345px)] flex-col items-center justify-center bg-transparent p-[clamp(24px,2.45vw,47px)] px-[clamp(16px,1.61vw,31px)] text-center'>
                   {/* Иконка */}
                   {feature.icon && (
@@ -79,7 +104,7 @@ export function ProjectSpecialFeaturesSection({
                           height={80}
                           className='mb-[15px]'
                         />
-                        <p className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal text-[#ff6b35]'>
+                        <p className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal text-(--accent-color)'>
                           {feature.title}
                         </p>
                       </div>
@@ -90,12 +115,12 @@ export function ProjectSpecialFeaturesSection({
                           height={80}
                           className='mb-[15px]'
                         />
-                        <p className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal text-[#ff6b35]'>
+                        <p className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal text-(--accent-color)'>
                           {feature.title}
                         </p>
                       </div>
                     ) : (
-                      <p className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal text-[#ff6b35]'>
+                      <p className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal text-(--accent-color)'>
                         {feature.title}
                       </p>
                     )}

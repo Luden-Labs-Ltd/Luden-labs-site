@@ -10,12 +10,14 @@ interface ProjectHowToPlaySectionProps {
   title?: string;
   cards: HowToPlayCard[];
   className?: string;
+  borderColor?: string;
 }
 
 export function ProjectHowToPlaySection({
   title = "КАК ИГРАТЬ?",
   cards,
   className,
+  borderColor,
 }: ProjectHowToPlaySectionProps) {
   return (
     <motion.section
@@ -57,11 +59,17 @@ export function ProjectHowToPlaySection({
               className='group relative'
             >
               {/* Рамка с hover эффектом */}
-              <div className='relative h-full overflow-hidden rounded-[15px] border-2 border-[#ffda5e] bg-white transition-colors hover:bg-[#ffda5e]'>
+              <div
+                className='group/card relative h-full overflow-hidden rounded-[15px] border-2 bg-white transition-colors hover:bg-[var(--border-color)]'
+                style={{
+                  borderColor: borderColor || "#ffda5e",
+                  "--border-color": borderColor || "#ffda5e",
+                } as React.CSSProperties & { "--border-color": string }}
+              >
                 <div className='flex h-full min-h-[clamp(300px,25vw,480px)] flex-col bg-transparent'>
                   {/* Изображение */}
                   {card.image && (
-                    <div className='box-border flex h-[clamp(180px,15vw,288px)] w-full items-center justify-center overflow-hidden bg-white p-[21px] transition-colors group-hover:bg-[#ffda5e]'>
+                    <div className='box-border flex h-[clamp(180px,15vw,288px)] w-full items-center justify-center overflow-hidden bg-white p-[21px] transition-colors group-hover/card:bg-[var(--border-color)]'>
                       <img
                         src={card.image}
                         alt=''
@@ -75,7 +83,7 @@ export function ProjectHowToPlaySection({
 
                   {/* Текст */}
                   <div className='flex flex-1 flex-col justify-center p-[clamp(24px,2.45vw,47px)] px-[clamp(16px,1.61vw,31px)]'>
-                    <p className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal text-[#5e6061] transition-colors group-hover:text-white'>
+                    <p className='font-days-one m-0 text-center text-[clamp(14px,1.35vw,26px)] leading-[1.273] font-normal text-[#5e6061] transition-colors group-hover/card:text-white'>
                       {card.text}
                     </p>
                   </div>

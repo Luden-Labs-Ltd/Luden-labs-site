@@ -10,6 +10,7 @@ import {
   GroupIcon,
   CheckCircleIcon,
 } from "@/shared/assets/icons/target-audience";
+import { COLOR_SCHEMES } from "@/entities/project/configs/presets";
 
 interface TargetAudienceCard {
   icon?: "hands" | "puzzle" | "group" | "check" | React.ReactNode;
@@ -28,6 +29,7 @@ interface ProjectTargetAudienceSectionProps {
   title?: string;
   cards: TargetAudienceCard[];
   className?: string;
+  colorScheme?: "scheme1" | "scheme2" | "scheme3" | "scheme4";
 }
 
 const gradients = [
@@ -41,8 +43,21 @@ export function ProjectTargetAudienceSection({
   title = "КОМУ ЭТО ПОДХОДИТ?",
   cards,
   className,
+  colorScheme,
 }: ProjectTargetAudienceSectionProps) {
   const isFourCards = cards.length === 4;
+
+  const gradientsFromScheme = () => {
+    if (!colorScheme) {
+      return gradients;
+    }
+    const schemeGradient = COLOR_SCHEMES[colorScheme].gradient;
+    const gradientUrl =
+      typeof schemeGradient === "string" ? schemeGradient : schemeGradient.src;
+    return [gradientUrl, gradientUrl, gradientUrl, gradientUrl];
+  };
+
+  const gradientsToUse = gradientsFromScheme();
 
   return (
     <motion.section
@@ -60,7 +75,7 @@ export function ProjectTargetAudienceSection({
       <div className='mx-auto max-w-[1920px] px-[clamp(16px,2vw,24px)]'>
         {/* Заголовок */}
         <div className='mb-[clamp(30px,3vw,40px)]'>
-          <h2 className='text-left font-sans text-[clamp(32px,3vw,48px)] leading-[1.2] font-bold text-[#333] uppercase'>
+          <h2 className='font-days-one text-center text-[clamp(32px,3.9vw,75px)] leading-[1.273] font-normal text-[#5e6061] uppercase'>
             {title}
           </h2>
         </div>
@@ -70,13 +85,13 @@ export function ProjectTargetAudienceSection({
           className={clsx(
             "grid gap-[clamp(20px,2vw,30px)]",
             isFourCards
-              ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 [&>:nth-child(4)]:col-span-1 sm:[&>:nth-child(4)]:col-span-2 lg:[&>:nth-child(4)]:col-span-1 lg:[&>:nth-child(4)]:col-start-2"
+              ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:[&>:nth-child(4)]:col-span-1 lg:[&>:nth-child(4)]:col-start-2"
               : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
           )}
         >
           {cards.map((card, index) => {
             const gradient =
-              card.gradient || gradients[index % gradients.length];
+              card.gradient || gradientsToUse[index % gradientsToUse.length];
 
             return (
               <motion.div

@@ -1,10 +1,7 @@
 import { Navbar } from "@/shared/ui/navbar";
 import type { ProjectConfig, ProjectSection } from "@/entities/project";
 import { COLOR_SCHEMES } from "@/entities/project";
-import {
-  SECTION_REGISTRY,
-  hasSectionComponent,
-} from "../model/sectionRegistry";
+import { SECTION_REGISTRY } from "../model/sectionRegistry";
 
 interface ProjectRendererProps {
   config: ProjectConfig;
@@ -15,46 +12,38 @@ export function ProjectRenderer({ config }: ProjectRendererProps) {
     ? COLOR_SCHEMES[config.theme.colorScheme]
     : null;
 
-  // Функция для получения изображения из assets по ключу
-  const getAsset = (key: string) => {
+  const getAsset = (key: string): string => {
     const asset = config.assets[key];
     if (!asset) {
       console.warn(`Asset with key "${key}" not found in project config`);
       return "";
     }
-    // Поддержка vite-imagetools (может быть объектом с .src)
     return typeof asset === "string" ? asset : asset.src;
   };
 
-  const getGradientFromScheme = () => {
+  const getGradientFromScheme = (): string | undefined => {
     if (!colorScheme) {
       return undefined;
     }
     const gradient = colorScheme.gradient;
-    return typeof gradient === "string" ? gradient : gradient.src;
+    if (typeof gradient === "string") {
+      return gradient;
+    }
+    return (gradient as { src: string }).src;
   };
 
-  // Функция для рендеринга секции
   const renderSection = (section: ProjectSection, index: number) => {
-    // Пропускаем выключенные секции
     if (!section.enabled) {
       return null;
     }
 
-    // Проверяем существование компонента
-    if (!hasSectionComponent(section.type)) {
-      console.warn(`Section component for type "${section.type}" not found`);
-      return null;
-    }
-
-    const SectionComponent = SECTION_REGISTRY[section.type];
     const key = `${section.type}-${index}`;
 
-    // Маппинг данных секции к пропсам компонента
     switch (section.type) {
-      case "header":
+      case "header": {
+        const HeaderComponent = SECTION_REGISTRY.header;
         return (
-          <SectionComponent
+          <HeaderComponent
             key={key}
             title={section.data.title}
             backgroundImage={
@@ -66,10 +55,12 @@ export function ProjectRenderer({ config }: ProjectRendererProps) {
             gradientTo={config.theme.header.gradient.to}
           />
         );
+      }
 
-      case "content":
+      case "content": {
+        const ContentComponent = SECTION_REGISTRY.content;
         return (
-          <SectionComponent
+          <ContentComponent
             key={key}
             image={getAsset(section.data.imageKey)}
             imageAlt={section.data.imageAlt}
@@ -82,12 +73,14 @@ export function ProjectRenderer({ config }: ProjectRendererProps) {
                 {paragraph.text}
               </p>
             ))}
-          </SectionComponent>
+          </ContentComponent>
         );
+      }
 
-      case "description":
+      case "description": {
+        const DescriptionComponent = SECTION_REGISTRY.description;
         return (
-          <SectionComponent
+          <DescriptionComponent
             key={key}
             title={section.data.title}
             bannerText={section.data.bannerText}
@@ -96,43 +89,104 @@ export function ProjectRenderer({ config }: ProjectRendererProps) {
             borderGradientColor={colorScheme?.color}
           />
         );
+      }
 
-      case "howToPlay":
+      case "howToPlay": {
+        const TargetAudienceComponent = SECTION_REGISTRY.targetAudience;
         return (
-          <SectionComponent
+          <TargetAudienceComponent
             key={key}
-            title={section.data.title}
+            title={section.data.title || "КАК ИГРАТЬ?"}
             cards={section.data.cards.map((card) => ({
-              image: card.imageKey ? getAsset(card.imageKey) : undefined,
+              icon: card.icon,
               text: card.text,
             }))}
-            borderColor={colorScheme?.color}
+            colorScheme={config.theme.colorScheme}
           />
         );
+      }
 
-      case "specialFeatures":
+      case "specialFeatures": {
+        const SpecialFeaturesComponent = SECTION_REGISTRY.specialFeatures;
+
+        const reactIconKeys = [
+          "navigation",
+          "phone",
+          "lightbulb",
+          "headphones",
+          "gamepad",
+          "paint",
+        ];
+
+        const mappedFeatures = section.data.features.map((feature) => {
+          if (feature.iconKey) {
+            const assetValue = config.assets[feature.iconKey];
+
+            if (
+              typeof assetValue === "string" &&
+              reactIconKeys.includes(assetValue)
+            ) {
+              return {
+                title: feature.title,
+                iconKey: assetValue,
+                icon: undefined,
+              };
+            }
+
+            if (typeof assetValue === "string" && assetValue.trim() !== "") {
+              return {
+                title: feature.title,
+                icon: assetValue,
+                iconKey: undefined,
+              };
+            }
+
+            if (
+              assetValue &&
+              typeof assetValue === "object" &&
+              "src" in assetValue
+            ) {
+              return {
+                title: feature.title,
+                icon: assetValue.src,
+                iconKey: undefined,
+              };
+            }
+          }
+
+          return {
+            title: feature.title,
+            icon: feature.icon,
+            iconKey: undefined,
+          };
+        });
+
         return (
-          <SectionComponent
+          <SpecialFeaturesComponent
             key={key}
             title={section.data.title}
-            features={section.data.features}
+            features={mappedFeatures}
             accentColor={colorScheme?.color}
           />
         );
+      }
 
-      case "targetAudience":
+      case "targetAudience": {
+        const TargetAudienceComponent = SECTION_REGISTRY.targetAudience;
         return (
-          <SectionComponent
+          <TargetAudienceComponent
             key={key}
             title={section.data.title}
             cards={section.data.cards}
             colorScheme={config.theme.colorScheme}
           />
         );
+      }
 
-      case "faq":
+      case "faq": {
+        const FAQComponent = SECTION_REGISTRY.faq;
         return (
-          <SectionComponent
+          <FAQComponent
             key={key}
             title={section.data.title}
             items={section.data.items}
@@ -144,35 +198,33 @@ export function ProjectRenderer({ config }: ProjectRendererProps) {
             iconColor={colorScheme?.color}
           />
         );
+      }
 
-      case "about":
-        return <SectionComponent key={key} />;
+      case "about": {
+        const AboutComponent = SECTION_REGISTRY.about;
+        return <AboutComponent key={key} />;
+      }
 
-      case "footer":
+      case "footer": {
+        const FooterComponent = SECTION_REGISTRY.footer;
         return (
-          <SectionComponent
+          <FooterComponent
             key={key}
             backgroundColor={
               colorScheme?.color || config.theme.footer.backgroundColor
             }
           />
         );
-
-      default: {
-        // TypeScript exhaustive check
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const _exhaustive: never = section;
-        return null;
       }
+
+      default:
+        return null;
     }
   };
 
   return (
     <div className='min-h-screen bg-white'>
-      {/* Навигация */}
       <Navbar />
-
-      {/* Динамический рендеринг всех секций */}
       {config.sections.map((section, index) => renderSection(section, index))}
     </div>
   );

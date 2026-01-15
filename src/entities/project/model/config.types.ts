@@ -1,15 +1,15 @@
-// Типы для конфигурации проектов
+import type { SpecialFeatureIconKey } from "@/shared/assets/icons/special-features/icon-keys";
 
 export interface ResponsiveSize {
-  clamp: string; // например: "clamp(32px,3.9vw,75px)"
+  clamp: string;
 }
 
 export interface ThemeConfig {
   colorScheme?: "scheme1" | "scheme2" | "scheme3" | "scheme4";
   header: {
     gradient: {
-      from: string; // Tailwind класс: "from-yellow-300"
-      to: string; // Tailwind класс: "to-yellow-500"
+      from: string;
+      to: string;
     };
     backgroundImage?: string;
     title?: {
@@ -22,14 +22,12 @@ export interface ThemeConfig {
   };
 }
 
-// Секции
-
 export interface HeaderSectionData {
   title: string;
 }
 
 export interface ContentSectionData {
-  imageKey: string; // Ключ для получения изображения из assets
+  imageKey: string;
   imageAlt: string;
   paragraphs: Array<{
     text: string;
@@ -51,7 +49,8 @@ export interface DescriptionSectionData {
 export interface HowToPlaySectionData {
   title?: string;
   cards: Array<{
-    imageKey?: string; // Ключ для получения изображения из assets
+    imageKey?: string;
+    icon?: "hands" | "puzzle" | "group" | "check" | "path" | "map" | "qrcode" | "certificate" | "donation";
     text: string;
   }>;
 }
@@ -60,6 +59,12 @@ export interface SpecialFeaturesSectionData {
   title?: string;
   features: Array<{
     icon?: string;
+    /**
+     * Ключ иконки из доступных special-features иконок
+     * Доступные значения: "gamepad", "paint", "navigation", "phone", "lightbulb", "headphones"
+     * См. SPECIAL_FEATURE_ICONS в @/shared/assets/icons/special-features/icon-keys
+     */
+    iconKey?: SpecialFeatureIconKey;
     title: string;
   }>;
 }
@@ -67,7 +72,7 @@ export interface SpecialFeaturesSectionData {
 export interface TargetAudienceSectionData {
   title?: string;
   cards: Array<{
-    icon?: "hands" | "puzzle" | "group" | "check";
+    icon?: "hands" | "puzzle" | "group" | "check" | "path" | "map" | "qrcode" | "certificate" | "donation";
     text: string;
     gradient?: string;
   }>;
@@ -75,7 +80,7 @@ export interface TargetAudienceSectionData {
 
 export interface FAQSectionData {
   title?: string;
-  bannerBackgroundImageKey?: string; // Ключ для получения изображения из assets
+  bannerBackgroundImageKey?: string;
   items: Array<{
     question: string;
     answer: string;
@@ -83,65 +88,57 @@ export interface FAQSectionData {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface AboutSectionData {
-  // Статичная секция, без параметров
-}
+export interface AboutSectionData { }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface FooterSectionData {
-  // Использует theme.footer.backgroundColor
-}
-
-// Типы секций с discriminated union
+export interface FooterSectionData { }
 
 export type ProjectSection =
   | {
-      type: "header";
-      enabled: boolean;
-      data: HeaderSectionData;
-    }
+    type: "header";
+    enabled: boolean;
+    data: HeaderSectionData;
+  }
   | {
-      type: "content";
-      enabled: boolean;
-      data: ContentSectionData;
-    }
+    type: "content";
+    enabled: boolean;
+    data: ContentSectionData;
+  }
   | {
-      type: "description";
-      enabled: boolean;
-      data: DescriptionSectionData;
-    }
+    type: "description";
+    enabled: boolean;
+    data: DescriptionSectionData;
+  }
   | {
-      type: "howToPlay";
-      enabled: boolean;
-      data: HowToPlaySectionData;
-    }
+    type: "howToPlay";
+    enabled: boolean;
+    data: HowToPlaySectionData;
+  }
   | {
-      type: "specialFeatures";
-      enabled: boolean;
-      data: SpecialFeaturesSectionData;
-    }
+    type: "specialFeatures";
+    enabled: boolean;
+    data: SpecialFeaturesSectionData;
+  }
   | {
-      type: "targetAudience";
-      enabled: boolean;
-      data: TargetAudienceSectionData;
-    }
+    type: "targetAudience";
+    enabled: boolean;
+    data: TargetAudienceSectionData;
+  }
   | {
-      type: "faq";
-      enabled: boolean;
-      data: FAQSectionData;
-    }
+    type: "faq";
+    enabled: boolean;
+    data: FAQSectionData;
+  }
   | {
-      type: "about";
-      enabled: boolean;
-      data: AboutSectionData;
-    }
+    type: "about";
+    enabled: boolean;
+    data: AboutSectionData;
+  }
   | {
-      type: "footer";
-      enabled: boolean;
-      data: FooterSectionData;
-    };
-
-// Главный тип конфигурации проекта
+    type: "footer";
+    enabled: boolean;
+    data: FooterSectionData;
+  };
 
 export interface ProjectConfigData {
   id: string;
@@ -150,12 +147,10 @@ export interface ProjectConfigData {
   sections: ProjectSection[];
 }
 
-// Тип для ассетов проекта
 export interface ProjectAssets {
-  [key: string]: string | { src: string }; // Поддержка vite-imagetools
+  [key: string]: string | { src: string };
 }
 
-// Финальный тип с ассетами
 export interface ProjectConfig extends ProjectConfigData {
   assets: ProjectAssets;
 }

@@ -4,7 +4,6 @@ import { ProjectDescriptionSection } from "./ProjectDescriptionSection";
 import { ProjectNotFound } from "./ProjectNotFound";
 import { ProjectFooter } from "./ProjectFooter";
 import { ProjectFAQSection } from "./ProjectFAQSection";
-import { ProjectHowToPlaySection } from "./ProjectHowToPlaySection";
 import { ProjectSpecialFeaturesSection } from "./ProjectSpecialFeaturesSection";
 import { ProjectTargetAudienceSection } from "./ProjectTargetAudienceSection";
 import { Navbar } from "@/shared/ui/navbar";
@@ -64,7 +63,12 @@ export function ProjectDetail() {
 
       {/* Секция КАК ИГРАТЬ */}
       {project.howToPlay && project.howToPlay.length > 0 && (
-        <ProjectHowToPlaySection cards={project.howToPlay} />
+        <ProjectTargetAudienceSection
+          title='КАК ИГРАТЬ?'
+          cards={project.howToPlay.map((card) => ({
+            text: card.text,
+          }))}
+        />
       )}
 
       {/* Секция FAQ */}

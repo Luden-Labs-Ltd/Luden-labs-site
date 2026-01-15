@@ -2,7 +2,6 @@
 import { ProjectHeader } from "../ui/ProjectHeader";
 import { ProjectContentSection } from "../ui/ProjectContentSection";
 import { ProjectDescriptionSection } from "../ui/ProjectDescriptionSection";
-import { ProjectHowToPlaySection } from "../ui/ProjectHowToPlaySection";
 import { ProjectSpecialFeaturesSection } from "../ui/ProjectSpecialFeaturesSection";
 import { ProjectTargetAudienceSection } from "../ui/ProjectTargetAudienceSection";
 import { ProjectFAQSection } from "../ui/ProjectFAQSection";
@@ -14,7 +13,7 @@ export const SECTION_REGISTRY = {
   header: ProjectHeader,
   content: ProjectContentSection,
   description: ProjectDescriptionSection,
-  howToPlay: ProjectHowToPlaySection,
+  howToPlay: ProjectTargetAudienceSection,
   specialFeatures: ProjectSpecialFeaturesSection,
   targetAudience: ProjectTargetAudienceSection,
   faq: ProjectFAQSection,

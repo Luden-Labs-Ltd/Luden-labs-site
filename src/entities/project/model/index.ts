@@ -6,6 +6,7 @@ export type {
   ResponsiveSize,
   ThemeConfig,
   ProjectSection,
+  SpecialFeaturesSectionData,
 } from "./config.types";
 
 // Экспорт конфигов и утилит

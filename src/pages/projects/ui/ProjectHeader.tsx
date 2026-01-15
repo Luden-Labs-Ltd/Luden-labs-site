@@ -36,15 +36,15 @@ export function ProjectHeader({
         y: 0,
       }}
       className={clsx(
-        "flex h-[clamp(106px,22vh,300px)] min-h-[clamp(106px,22vh,300px)] w-full items-center justify-center",
+        "flex min-h-[clamp(106px,22vh,300px)] w-full items-center justify-center py-[clamp(20px,4vh,40px)]",
         !backgroundImage && `bg-gradient-to-r ${gradientFrom} ${gradientTo}`,
         "relative overflow-hidden",
         className,
       )}
       style={backgroundStyle}
     >
-      <div className='relative z-10 mx-auto flex h-full w-full max-w-[1920px] items-center justify-center px-4 md:px-8 lg:px-12'>
-        <h1 className='font-days-one inline-block max-w-full text-center text-[clamp(45px,12vw,196px)] leading-[100%] font-normal tracking-[0%] whitespace-nowrap text-white uppercase'>
+      <div className='relative z-10 mx-auto flex w-full max-w-[1920px] items-center justify-center px-4 md:px-8 lg:px-12'>
+        <h1 className='font-days-one block w-full max-w-full text-center text-[clamp(45px,12vw,196px)] leading-[1.1] font-normal tracking-[0%] text-white uppercase'>
           {title}
         </h1>
       </div>

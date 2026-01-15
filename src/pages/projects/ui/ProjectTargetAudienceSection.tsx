@@ -9,20 +9,47 @@ import {
   PuzzleIcon,
   GroupIcon,
   CheckCircleIcon,
+  PathIcon,
+  MapIcon,
+  QRCodeIcon,
+  CertificateIcon,
+  DonationIcon,
 } from "@/shared/assets/icons/target-audience";
 import { COLOR_SCHEMES } from "@/entities/project";
 
 interface TargetAudienceCard {
-  icon?: "hands" | "puzzle" | "group" | "check" | React.ReactNode;
+  icon?: "hands" | "puzzle" | "group" | "check" | "path" | "map" | "qrcode" | "certificate" | "donation" | React.ReactNode;
   text: string;
   gradient?: string;
 }
 
-const iconMap: Record<string, React.ReactNode> = {
-  hands: <HandsIcon />,
-  puzzle: <PuzzleIcon />,
-  group: <GroupIcon />,
-  check: <CheckCircleIcon />,
+const renderIcon = (
+  iconKey: string,
+  className?: string,
+): React.ReactNode => {
+  const iconProps = { className };
+  switch (iconKey) {
+    case "hands":
+      return <HandsIcon width={80} height={80} {...iconProps} />;
+    case "puzzle":
+      return <PuzzleIcon width={80} height={80} {...iconProps} />;
+    case "group":
+      return <GroupIcon width={80} height={80} {...iconProps} />;
+    case "check":
+      return <CheckCircleIcon width={80} height={80} {...iconProps} />;
+    case "path":
+      return <PathIcon width={80} height={80} {...iconProps} />;
+    case "map":
+      return <MapIcon width={80} height={80} {...iconProps} />;
+    case "qrcode":
+      return <QRCodeIcon width={80} height={80} {...iconProps} />;
+    case "certificate":
+      return <CertificateIcon width={80} height={80} {...iconProps} />;
+    case "donation":
+      return <DonationIcon width={80} height={80} {...iconProps} />;
+    default:
+      return null;
+  }
 };
 
 interface ProjectTargetAudienceSectionProps {
@@ -45,15 +72,15 @@ export function ProjectTargetAudienceSection({
   className,
   colorScheme,
 }: ProjectTargetAudienceSectionProps) {
-  const isFourCards = cards.length === 4;
-
   const gradientsFromScheme = () => {
     if (!colorScheme) {
       return gradients;
     }
     const schemeGradient = COLOR_SCHEMES[colorScheme].gradient;
     const gradientUrl =
-      typeof schemeGradient === "string" ? schemeGradient : schemeGradient.src;
+      typeof schemeGradient === "string"
+        ? schemeGradient
+        : (schemeGradient as { src: string }).src;
     return [gradientUrl, gradientUrl, gradientUrl, gradientUrl];
   };
 
@@ -81,14 +108,13 @@ export function ProjectTargetAudienceSection({
         </div>
 
         {/* Карточки */}
-        <div
-          className={clsx(
-            "grid gap-[clamp(20px,2vw,30px)]",
-            isFourCards
-              ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:[&>:nth-child(4)]:col-span-1 lg:[&>:nth-child(4)]:col-start-2"
-              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
-          )}
-        >
+        <div className='flex justify-center'>
+          <div
+            className={clsx(
+              "grid gap-[clamp(20px,2vw,30px)]",
+              "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+            )}
+          >
           {cards.map((card, index) => {
             const gradient =
               card.gradient || gradientsToUse[index % gradientsToUse.length];
@@ -114,10 +140,10 @@ export function ProjectTargetAudienceSection({
                   backgroundPosition: "center",
                 }}
               >
-                <div className='z-[1] flex w-full items-center gap-[clamp(16px,2vw,24px)] max-sm:flex-col max-sm:text-center'>
-                  <div className='flex flex-shrink-0 items-center justify-center'>
+                <div className='z-1 flex w-full items-center gap-[clamp(16px,2vw,24px)] max-sm:flex-col max-sm:text-center'>
+                  <div className='flex shrink-0 items-center justify-center [&>svg]:w-[80px] [&>svg]:h-[80px] sm:[&>svg]:w-[50px] sm:[&>svg]:h-[50px] md:[&>svg]:w-[50px] md:[&>svg]:h-[50px] lg:[&>svg]:w-[80px] lg:[&>svg]:h-[80px]'>
                     {typeof card.icon === "string"
-                      ? iconMap[card.icon as keyof typeof iconMap]
+                      ? renderIcon(card.icon)
                       : card.icon}
                   </div>
                   <p className='m-0 font-sans text-[clamp(16px,1.8vw,22px)] leading-[1.4] font-medium text-white'>
@@ -127,6 +153,7 @@ export function ProjectTargetAudienceSection({
               </motion.div>
             );
           })}
+          </div>
         </div>
       </div>
     </motion.section>

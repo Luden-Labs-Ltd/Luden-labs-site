@@ -6,6 +6,7 @@ export type {
   ResponsiveSize,
   ThemeConfig,
   ProjectSection,
+  SpecialFeaturesSectionData,
 } from "./model";
 
 export {

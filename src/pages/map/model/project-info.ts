@@ -30,10 +30,8 @@ export function getProjectInfoByBuildingId(
   const contentSection = config.sections.find((s) => s.type === "content");
   const description =
     contentSection && "data" in contentSection
-      ? (
-          (contentSection.data as { paragraphs?: Array<{ text: string }> })
-            .paragraphs?.[0]?.text || "Описание проекта"
-        )
+      ? (contentSection.data as { paragraphs?: Array<{ text: string }> })
+          .paragraphs?.[0]?.text || "Описание проекта"
       : "Описание проекта";
 
   return {

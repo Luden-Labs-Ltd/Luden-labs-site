@@ -86,7 +86,7 @@ export function Popover({ currentProject, onClick, onVisited }: Props) {
         <section className='mt-4 flex'>
           {/* button */}
           <button
-            className='flex items-center rounded-full bg-green-800 px-10 py-2 text-sm text-white hover:bg-green-700 transition-colors'
+            className='flex items-center rounded-full bg-green-800 px-10 py-2 text-sm text-white transition-colors hover:bg-green-700'
             onClick={handleLearnMore}
           >
             Узнать больше

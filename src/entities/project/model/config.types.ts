@@ -50,7 +50,16 @@ export interface HowToPlaySectionData {
   title?: string;
   cards: Array<{
     imageKey?: string;
-    icon?: "hands" | "puzzle" | "group" | "check" | "path" | "map" | "qrcode" | "certificate" | "donation";
+    icon?:
+      | "hands"
+      | "puzzle"
+      | "group"
+      | "check"
+      | "path"
+      | "map"
+      | "qrcode"
+      | "certificate"
+      | "donation";
     text: string;
   }>;
 }
@@ -72,7 +81,16 @@ export interface SpecialFeaturesSectionData {
 export interface TargetAudienceSectionData {
   title?: string;
   cards: Array<{
-    icon?: "hands" | "puzzle" | "group" | "check" | "path" | "map" | "qrcode" | "certificate" | "donation";
+    icon?:
+      | "hands"
+      | "puzzle"
+      | "group"
+      | "check"
+      | "path"
+      | "map"
+      | "qrcode"
+      | "certificate"
+      | "donation";
     text: string;
     gradient?: string;
   }>;
@@ -88,57 +106,57 @@ export interface FAQSectionData {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface AboutSectionData { }
+export interface AboutSectionData {}
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface FooterSectionData { }
+export interface FooterSectionData {}
 
 export type ProjectSection =
   | {
-    type: "header";
-    enabled: boolean;
-    data: HeaderSectionData;
-  }
+      type: "header";
+      enabled: boolean;
+      data: HeaderSectionData;
+    }
   | {
-    type: "content";
-    enabled: boolean;
-    data: ContentSectionData;
-  }
+      type: "content";
+      enabled: boolean;
+      data: ContentSectionData;
+    }
   | {
-    type: "description";
-    enabled: boolean;
-    data: DescriptionSectionData;
-  }
+      type: "description";
+      enabled: boolean;
+      data: DescriptionSectionData;
+    }
   | {
-    type: "howToPlay";
-    enabled: boolean;
-    data: HowToPlaySectionData;
-  }
+      type: "howToPlay";
+      enabled: boolean;
+      data: HowToPlaySectionData;
+    }
   | {
-    type: "specialFeatures";
-    enabled: boolean;
-    data: SpecialFeaturesSectionData;
-  }
+      type: "specialFeatures";
+      enabled: boolean;
+      data: SpecialFeaturesSectionData;
+    }
   | {
-    type: "targetAudience";
-    enabled: boolean;
-    data: TargetAudienceSectionData;
-  }
+      type: "targetAudience";
+      enabled: boolean;
+      data: TargetAudienceSectionData;
+    }
   | {
-    type: "faq";
-    enabled: boolean;
-    data: FAQSectionData;
-  }
+      type: "faq";
+      enabled: boolean;
+      data: FAQSectionData;
+    }
   | {
-    type: "about";
-    enabled: boolean;
-    data: AboutSectionData;
-  }
+      type: "about";
+      enabled: boolean;
+      data: AboutSectionData;
+    }
   | {
-    type: "footer";
-    enabled: boolean;
-    data: FooterSectionData;
-  };
+      type: "footer";
+      enabled: boolean;
+      data: FooterSectionData;
+    };
 
 export interface ProjectConfigData {
   id: string;

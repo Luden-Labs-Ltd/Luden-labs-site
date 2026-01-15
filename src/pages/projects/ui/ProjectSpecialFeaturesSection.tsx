@@ -97,7 +97,7 @@ export function ProjectSpecialFeaturesSection({
                 <div className='flex h-full min-h-[clamp(200px,18vw,345px)] flex-col items-center justify-center bg-transparent p-[clamp(24px,2.45vw,47px)] px-[clamp(16px,1.61vw,31px)] text-center'>
                   {(() => {
                     let IconComponent = null;
-                    
+
                     if (feature.iconKey === "navigation") {
                       IconComponent = NavigationIcon;
                     } else if (feature.iconKey === "phone") {

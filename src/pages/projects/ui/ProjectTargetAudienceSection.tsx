@@ -18,15 +18,22 @@ import {
 import { COLOR_SCHEMES } from "@/entities/project";
 
 interface TargetAudienceCard {
-  icon?: "hands" | "puzzle" | "group" | "check" | "path" | "map" | "qrcode" | "certificate" | "donation" | React.ReactNode;
+  icon?:
+    | "hands"
+    | "puzzle"
+    | "group"
+    | "check"
+    | "path"
+    | "map"
+    | "qrcode"
+    | "certificate"
+    | "donation"
+    | React.ReactNode;
   text: string;
   gradient?: string;
 }
 
-const renderIcon = (
-  iconKey: string,
-  className?: string,
-): React.ReactNode => {
+const renderIcon = (iconKey: string, className?: string): React.ReactNode => {
   const iconProps = { className };
   switch (iconKey) {
     case "hands":
@@ -115,44 +122,44 @@ export function ProjectTargetAudienceSection({
               "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
             )}
           >
-          {cards.map((card, index) => {
-            const gradient =
-              card.gradient || gradientsToUse[index % gradientsToUse.length];
+            {cards.map((card, index) => {
+              const gradient =
+                card.gradient || gradientsToUse[index % gradientsToUse.length];
 
-            return (
-              <motion.div
-                key={index}
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  delay: 0.4 + index * 0.1,
-                }}
-                className='project-target-audience-card relative flex min-h-[clamp(180px,20vw,240px)] items-center overflow-hidden rounded-[clamp(12px,1.5vw,20px)] p-[clamp(24px,3vw,40px)]'
-                style={{
-                  backgroundImage: `url(${gradient})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                <div className='z-1 flex w-full items-center gap-[clamp(16px,2vw,24px)] max-sm:flex-col max-sm:text-center'>
-                  <div className='flex shrink-0 items-center justify-center [&>svg]:w-[80px] [&>svg]:h-[80px] sm:[&>svg]:w-[50px] sm:[&>svg]:h-[50px] md:[&>svg]:w-[50px] md:[&>svg]:h-[50px] lg:[&>svg]:w-[80px] lg:[&>svg]:h-[80px]'>
-                    {typeof card.icon === "string"
-                      ? renderIcon(card.icon)
-                      : card.icon}
+              return (
+                <motion.div
+                  key={index}
+                  initial={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    delay: 0.4 + index * 0.1,
+                  }}
+                  className='project-target-audience-card relative flex min-h-[clamp(180px,20vw,240px)] items-center overflow-hidden rounded-[clamp(12px,1.5vw,20px)] p-[clamp(24px,3vw,40px)]'
+                  style={{
+                    backgroundImage: `url(${gradient})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <div className='z-1 flex w-full items-center gap-[clamp(16px,2vw,24px)] max-sm:flex-col max-sm:text-center'>
+                    <div className='flex shrink-0 items-center justify-center [&>svg]:h-[80px] [&>svg]:w-[80px] sm:[&>svg]:h-[50px] sm:[&>svg]:w-[50px] md:[&>svg]:h-[50px] md:[&>svg]:w-[50px] lg:[&>svg]:h-[80px] lg:[&>svg]:w-[80px]'>
+                      {typeof card.icon === "string"
+                        ? renderIcon(card.icon)
+                        : card.icon}
+                    </div>
+                    <p className='m-0 font-sans text-[clamp(16px,1.8vw,22px)] leading-[1.4] font-medium text-white'>
+                      {card.text}
+                    </p>
                   </div>
-                  <p className='m-0 font-sans text-[clamp(16px,1.8vw,22px)] leading-[1.4] font-medium text-white'>
-                    {card.text}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

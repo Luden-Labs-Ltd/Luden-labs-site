@@ -4,11 +4,7 @@ interface MapIconProps {
   className?: string;
 }
 
-export function MapIcon({
-  width = 80,
-  height = 80,
-  className,
-}: MapIconProps) {
+export function MapIcon({ width = 80, height = 80, className }: MapIconProps) {
   return (
     <svg
       width={width}

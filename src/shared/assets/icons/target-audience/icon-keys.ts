@@ -9,6 +9,8 @@ export const TARGET_AUDIENCE_ICONS = {
   certificate: "certificate",
   donation: "donation",
   family: "family",
+  trophy: "trophy",
+  logistics: "logistics",
 } as const;
 
 export type TargetAudienceIconKey =
@@ -29,4 +31,6 @@ export const TARGET_AUDIENCE_ICON_DESCRIPTIONS: Record<
   certificate: "Сертификат, достижение",
   donation: "Пожертвование, помощь",
   family: "Семья, забота, поддержка",
+  trophy: "Трофей, награда, соревнование",
+  logistics: "Логистика, доставка, транспорт",
 };

@@ -25,7 +25,6 @@
       "type": "content",
       "enabled": true,
       "data": {
-        "imageKey": "mainImage",
         "imageAlt": "Historical Journey App",
         "paragraphs": [
           {

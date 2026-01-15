@@ -57,7 +57,7 @@ export function ProjectAboutSection({ className }: ProjectAboutSectionProps) {
           </p>
           <Button
             variant='primary'
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/map")}
             className='font-days-one rounded-[10px] border-none p-[8.5px_15px] text-center text-[18px] leading-[1.22] font-normal text-white transition-[background-color] duration-200 md:rounded-[15px] md:p-[15px_25px] md:text-[21px] lg:text-[30px] xl:text-[30px] 2xl:text-[36px]'
             style={{ backgroundColor: "#ACD97C", color: "#ffffff" }}
           >

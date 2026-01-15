@@ -15,6 +15,8 @@ import {
   CertificateIcon,
   DonationIcon,
   FamilyIcon,
+  TrophyIcon,
+  LogisticsIcon,
 } from "@/shared/assets/icons/target-audience";
 import { COLOR_SCHEMES } from "@/entities/project";
 
@@ -30,6 +32,8 @@ interface TargetAudienceCard {
     | "certificate"
     | "donation"
     | "family"
+    | "trophy"
+    | "logistics"
     | React.ReactNode;
   text: string;
   gradient?: string;
@@ -58,6 +62,10 @@ const renderIcon = (iconKey: string, className?: string): React.ReactNode => {
       return <DonationIcon width={80} height={80} {...iconProps} />;
     case "family":
       return <FamilyIcon width={80} height={80} {...iconProps} />;
+    case "trophy":
+      return <TrophyIcon width={80} height={80} {...iconProps} />;
+    case "logistics":
+      return <LogisticsIcon width={80} height={80} {...iconProps} />;
     default:
       return null;
   }

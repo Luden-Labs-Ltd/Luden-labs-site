@@ -8,6 +8,8 @@ export { QRCodeIcon } from "./QRCodeIcon";
 export { CertificateIcon } from "./CertificateIcon";
 export { DonationIcon } from "./DonationIcon";
 export { FamilyIcon } from "./FamilyIcon";
+export { TrophyIcon } from "./TrophyIcon";
+export { LogisticsIcon } from "./LogisticsIcon";
 
 // Экспорт констант и типов для иконок
 export {

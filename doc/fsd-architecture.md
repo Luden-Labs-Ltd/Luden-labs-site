@@ -57,11 +57,6 @@ src/
 │   │   │   └── index.ts
 │   │   └── index.ts
 │   │
-│   ├── project-card/      # Карточка проекта (для списков/превью)
-│   │   ├── ui/
-│   │   │   ├── ProjectCard.tsx
-│   │   │   └── index.ts
-│   │   └── index.ts
 │   │
 │   ├── project-theme/     # Тема проекта (цвета, стили)
 │   │   ├── ui/
@@ -91,10 +86,14 @@ src/
 ├── entities/              # Бизнес-сущности
 │   └── project/          # Сущность проекта
 │       ├── model/
-│       │   ├── type.ts           # Типы проекта (уже существует)
-│       │   ├── data.ts           # Данные проектов (уже существует)
-│       │   ├── index.ts          # Экспорты (уже существует)
-│       │   └── hooks.ts          # Базовые хуки для работы с проектами
+│       │   ├── config.types.ts      # Типы конфигурации проектов
+│       │   ├── building-mapping.ts  # Маппинг зданий к проектам
+│       │   ├── configs/
+│       │   │   ├── data/           # JSON данные проектов
+│       │   │   ├── assets/         # Ассеты проектов
+│       │   │   ├── presets.ts      # Переиспользуемые пресеты
+│       │   │   └── index.ts        # Главный конфиг
+│       │   └── index.ts            # Экспорты
 │       │
 │       └── index.ts
 │
@@ -151,8 +150,9 @@ src/
 
 Бизнес-сущности:
 
-- **project/** - Сущность проекта (уже частично реализована)
-  - Содержит типы, данные и базовые хуки для работы с проектами
+- **project/** - Сущность проекта
+  - Содержит типы, конфигурацию, данные и утилиты для работы с проектами
+  - Включает маппинг между зданиями на карте и проектами
 
 ### 5. Shared (shared/)
 
@@ -218,16 +218,18 @@ type ProjectTheme = {
 
 ### Добавление нового проекта:
 
-1. Добавить данные в `entities/project/model/data.ts`
-2. Добавить тему в `widgets/project-theme/model/projectThemes.ts`
-3. Добавить изображения в `shared/assets/images/projects/`
-4. Добавить переводы в `shared/lib/i18n/translations.ts`
+1. Создать JSON конфиг в `entities/project/model/configs/data/[project-slug].json`
+2. Создать файл ассетов в `entities/project/model/configs/assets/[project-slug].ts`
+3. Добавить конфиг в `entities/project/model/configs/index.ts`
+4. Добавить маппинг здания в `entities/project/model/building-mapping.ts` (если нужен на карте)
+5. Добавить здание в `pages/map/model/buildings.ts` (если нужен на карте)
 
 ### Добавление новой секции:
 
-1. Расширить тип `ProjectSectionType` в `entities/project/model/type.ts`
-2. Создать компонент секции в `pages/project/ui/`
-3. Добавить логику отображения в `pages/project/model/useProjectSections.ts`
+1. Расширить тип `ProjectSection` в `entities/project/model/config.types.ts`
+2. Создать компонент секции в `pages/projects/ui/`
+3. Добавить компонент в `pages/projects/model/sectionRegistry.ts`
+4. Добавить логику рендеринга в `pages/projects/ui/ProjectRenderer.tsx`
 
 ## Преимущества такой структуры
 

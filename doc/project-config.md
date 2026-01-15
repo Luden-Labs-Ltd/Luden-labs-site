@@ -2,7 +2,7 @@
 
 ### 1) JSON с данными
 
-`src/entities/project/configs/data/my-project.json`
+`src/entities/project/model/configs/data/my-project.json`
 
 ```json
 {
@@ -38,7 +38,7 @@
 
 ### 2) Файл ассетов
 
-`src/entities/project/configs/assets/my-project.ts`
+`src/entities/project/model/configs/assets/my-project.ts`
 
 ```ts
 import mainImage from "@/shared/assets/images/projects/my-project/main.webp";
@@ -50,7 +50,7 @@ export const myProjectAssets = {
 
 ### 3) Регистрация проекта
 
-`src/entities/project/configs/index.ts`
+`src/entities/project/model/configs/index.ts`
 
 ```ts
 import myProjectData from "./data/my-project.json";

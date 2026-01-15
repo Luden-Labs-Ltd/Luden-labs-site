@@ -1,6 +1,6 @@
 // Переиспользуемые пресеты для конфигов проектов
 
-import type { ResponsiveSize, ThemeConfig } from "../model/config.types";
+import type { ResponsiveSize, ThemeConfig } from "../config.types";
 import redOrangeGradient from "@/shared/assets/images/pages/projects/gradients/red-orange-gradient.png?format=webp";
 import yellowOrangeGradient from "@/shared/assets/images/pages/projects/gradients/yellow-orange-gradient.png?format=webp";
 import cyanBlueGradient from "@/shared/assets/images/pages/projects/gradients/cyan-blue-gradient.png?format=webp";

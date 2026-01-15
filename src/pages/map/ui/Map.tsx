@@ -1,25 +1,26 @@
-import { projectsData } from "@/entities/project";
 import coloredMap from "@assets/images/pages/map/coloredMap.webp";
 import uncoloredMap from "@assets/images/pages/map/uncoloredMap.webp";
 import { useMemo, useState } from "react";
 import { getVisitedOpacity } from "../lib/utils/getVisitedOpacity";
-import { mapBuildings } from "../model";
+import { mapBuildings, getProjectInfoByBuildingId } from "../model";
 import { Building } from "./Building";
 import { Popover } from "./Popover";
 
 export function Map() {
   const [opacity, setOpacity] = useState(getVisitedOpacity);
 
-  const [currentProjectId, setCurrentProjectId] = useState<number | null>(null);
+  const [currentBuildingId, setCurrentBuildingId] = useState<number | null>(
+    null,
+  );
 
   const currentProject = useMemo(() => {
-    if (currentProjectId == null) return null;
+    if (currentBuildingId == null) return null;
 
-    return projectsData[currentProjectId] ?? null;
-  }, [currentProjectId]);
+    return getProjectInfoByBuildingId(currentBuildingId);
+  }, [currentBuildingId]);
 
   const onClose = () => {
-    setCurrentProjectId(null);
+    setCurrentBuildingId(null);
   };
 
   const onVisited = () => {
@@ -50,14 +51,14 @@ export function Map() {
           src={building.src}
           x={building.x}
           y={building.y}
-          onClick={() => setCurrentProjectId(building.projectId)}
+          onClick={() => setCurrentBuildingId(building.projectId)}
         />
       ))}
 
       {/* Popover */}
-      {!!currentProjectId && (
+      {!!currentBuildingId && currentProject && (
         <Popover
-          currentProject={currentProject!}
+          currentProject={currentProject}
           onClick={onClose}
           onVisited={onVisited}
         />

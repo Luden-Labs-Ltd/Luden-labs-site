@@ -10,7 +10,7 @@ import {
   GroupIcon,
   CheckCircleIcon,
 } from "@/shared/assets/icons/target-audience";
-import { COLOR_SCHEMES } from "@/entities/project/configs/presets";
+import { COLOR_SCHEMES } from "@/entities/project";
 
 interface TargetAudienceCard {
   icon?: "hands" | "puzzle" | "group" | "check" | React.ReactNode;

@@ -132,7 +132,7 @@ entities/project/
   │   ├── data.ts      ✅ Данные проектов
   │   └── index.ts     ✅ Экспорты
   └── ui/
-      └── ProjectCard.tsx  ✅ Карточка проекта (переиспользуемая)
+      # Удалено - ProjectCard не используется
 ```
 
 ---
@@ -238,7 +238,7 @@ export function ProjectDetail() {
 
 ### Компоненты в `widgets/`
 
-- С префиксом функциональности: `ProjectCard`, `ProjectTheme`
+- С префиксом функциональности: `ProjectTheme`, `ProjectHeader`
 - Описывает назначение виджета
 
 ---

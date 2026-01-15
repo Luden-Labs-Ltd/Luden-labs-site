@@ -1,5 +1,5 @@
 // Централизованный экспорт всех конфигов проектов
-import type { ProjectConfig, ProjectConfigData } from "../model/config.types";
+import type { ProjectConfig, ProjectConfigData } from "../config.types";
 import { COLOR_SCHEMES } from "./presets";
 import type { ColorSchemeName } from "./presets";
 
@@ -151,7 +151,9 @@ export {
   FONT_SIZES,
   COLORS,
   SECTION_TITLE_STYLE,
+  COLOR_SCHEMES,
 } from "./presets";
 
 // Экспорт типов
-export type { ProjectConfig, ProjectConfigData } from "../model/config.types";
+export type { ProjectConfig, ProjectConfigData } from "../config.types";
+export type { ColorSchemeName } from "./presets";

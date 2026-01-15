@@ -1,18 +1,19 @@
-import type { Project } from "@/entities/project";
+import type { ProjectInfo } from "../model";
 import { Card } from "@/shared/ui";
 import { X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
-  currentProject?: Project;
+  currentProject: ProjectInfo;
   onClick?: () => void;
   onVisited?: () => void;
 };
 
 export function Popover({ currentProject, onClick, onVisited }: Props) {
+  const navigate = useNavigate();
+
   // Records the current project as visited in localStorage and notifies the parent.
   const setProjectAsVisited = () => {
-    // Persist the current project's name to localStorage if it's not already there.
-    if (!currentProject) return;
     const storageKey = "visitedProjects";
     const raw = localStorage.getItem(storageKey);
     let visited: string[] = [];
@@ -41,6 +42,11 @@ export function Popover({ currentProject, onClick, onVisited }: Props) {
 
     // Let the parent update derived UI (e.g., opacity) immediately.
     onVisited?.();
+  };
+
+  const handleLearnMore = () => {
+    setProjectAsVisited();
+    navigate(`/projects/${currentProject.slug}`);
   };
 
   return (
@@ -80,8 +86,8 @@ export function Popover({ currentProject, onClick, onVisited }: Props) {
         <section className='mt-4 flex'>
           {/* button */}
           <button
-            className='flex items-center rounded-full bg-green-800 px-10 py-2 text-sm text-white'
-            onClick={() => setProjectAsVisited()}
+            className='flex items-center rounded-full bg-green-800 px-10 py-2 text-sm text-white hover:bg-green-700 transition-colors'
+            onClick={handleLearnMore}
           >
             Узнать больше
           </button>

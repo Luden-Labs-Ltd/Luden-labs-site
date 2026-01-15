@@ -1,8 +1,13 @@
-export { ProjectCard } from "./ui/ProjectCard";
-export { projectsData } from "./model/data";
-export type { Project, ProjectConfig, ProjectConfigData } from "./model/index";
+// Экспорт всего из model
+export type {
+  ProjectConfig,
+  ProjectConfigData,
+  ProjectAssets,
+  ResponsiveSize,
+  ThemeConfig,
+  ProjectSection,
+} from "./model";
 
-// Экспорт конфигов и утилит
 export {
   PROJECT_CONFIGS,
   getProjectConfig,
@@ -11,4 +16,12 @@ export {
   THEME_PRESETS,
   FONT_SIZES,
   COLORS,
-} from "./configs";
+  COLOR_SCHEMES,
+  SECTION_TITLE_STYLE,
+  BUILDING_TO_PROJECT_MAP,
+  PROJECT_TO_BUILDING_MAP,
+  getProjectSlugByBuildingId,
+  getBuildingIdByProjectSlug,
+} from "./model";
+
+export type { ProjectId, ColorSchemeName } from "./model";

@@ -1,11 +1,10 @@
 import { Navbar } from "@/shared/ui/navbar";
-import type { ProjectConfig } from "@/entities/project/configs";
-import { COLOR_SCHEMES } from "@/entities/project/configs/presets";
+import type { ProjectConfig, ProjectSection } from "@/entities/project";
+import { COLOR_SCHEMES } from "@/entities/project";
 import {
   SECTION_REGISTRY,
   hasSectionComponent,
 } from "../model/sectionRegistry";
-import type { ProjectSection } from "@/entities/project/model/config.types";
 
 interface ProjectRendererProps {
   config: ProjectConfig;

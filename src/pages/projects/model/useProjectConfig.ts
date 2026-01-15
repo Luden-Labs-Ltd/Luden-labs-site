@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import { getProjectConfig } from "@/entities/project/configs";
-import type { ProjectConfig } from "@/entities/project/configs";
+import { getProjectConfig } from "@/entities/project";
+import type { ProjectConfig } from "@/entities/project";
 
 export function useProjectConfig(): {
   config: ProjectConfig | null;

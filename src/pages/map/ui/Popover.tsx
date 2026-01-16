@@ -50,8 +50,8 @@ export function Popover({ currentProject, onClick, onVisited }: Props) {
   };
 
   return (
-    <Card className='absolute bottom-[20%] left-12 w-[50%] max-w-104'>
-      <section className='flex w-full flex-col'>
+    <Card className='absolute bottom-[5%] left-[3%] lg:bottom-[1%] lg:left-[1%] xl:bottom-[5%] xl:left-[3%] max-w-104 max-h-[500px] xl:max-h-[600px] lg:max-w-74 xl:max-w-94'>
+      <section className='flex h-full overflow-y-auto w-full flex-col'>
         <section className='flex items-center justify-between'>
           {/* label */}
           <span className='flex h-6 items-center rounded-full bg-red-500 px-4.5 text-xs text-white'>
@@ -64,7 +64,7 @@ export function Popover({ currentProject, onClick, onVisited }: Props) {
         </section>
 
         {/* Image section */}
-        <section className='mt-4 aspect-video max-h-[200px] overflow-hidden rounded-2xl bg-black'>
+        <section className='mt-4 lg:max-h-[140px] xl:max-h-[180px] aspect-video overflow-hidden rounded-2xl bg-black'>
           {/* Image */}
           <img
             src='https://img.freepik.com/premium-vector/city-street-small-town-walk-building-people-walking-abstract-concept-graphic-design_133260-4131.jpg'
@@ -73,7 +73,7 @@ export function Popover({ currentProject, onClick, onVisited }: Props) {
           />
         </section>
         {/* section with heading and description */}
-        <section className='mt-4 flex flex-col'>
+        <section className='mt-4 flex flex-col overflow-auto max-h-[100px]'>
           {/* heading */}
           <h3 className='mb-1 text-lg'>{currentProject!.name}</h3>
           {/* description */}

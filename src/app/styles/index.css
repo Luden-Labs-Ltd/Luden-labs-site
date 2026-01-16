@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@config "../../../tailwind.config.js";
+
 @theme {
   /* Color themes */
   --color-ludic-50: #fffbeb;

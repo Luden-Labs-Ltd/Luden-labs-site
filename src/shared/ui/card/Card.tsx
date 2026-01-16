@@ -36,7 +36,7 @@ export function Card({
     <div
       className={clsx(
         "rounded-3xl transition-all duration-300",
-        variant === "default" && "bg-white p-8 shadow-md",
+        variant === "default" && "bg-white lg:p-8 shadow-md",
         variant === "glass" && "glass p-6",
         variant === "gradient" &&
           theme &&
